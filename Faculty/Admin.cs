@@ -915,12 +915,13 @@ namespace Faculty
 
         }
 
-        //rahulSuper_user 
+        //rahulSuper_user
+        String rest = null;
         private void button4_Click(object sender, EventArgs e)
         {
             String url = murlf + "avgstudent_marks";
             WebClient wc = new WebClient();
-            String rest = wc.DownloadString(url);
+            rest = wc.DownloadString(url);
             student_admins[] strs = JsonConvert.DeserializeObject<student_admins[]>(rest);
             int lengt = strs.Length;
             int j = 0;
@@ -1291,8 +1292,8 @@ namespace Faculty
             }
             Excel.Workbook workbok;
             Excel.Worksheet workshet;
-            object misvl = System.Reflection.Missing.Value;
-            workbok = xlapp.Workbooks.Add(misvl);
+            object misValue = System.Reflection.Missing.Value;
+            workbok = xlapp.Workbooks.Add(misValue);
             workshet = (Excel.Worksheet)workbok.Worksheets.get_Item(1);
             //     workshet = (Excel.Worksheets)workbok.Worksheets.get_Item(1);
             workshet.Cells[1,1] = "Sno";
@@ -1307,8 +1308,85 @@ namespace Faculty
             Accf[] rst = JsonConvert.DeserializeObject<Accf[]>(res_strings_fact);
             for(int i=0;i<rst.Length;i++)
             {
-          //      workshet.Cells[i+2][i+1]=rst.
-            } 
+                workshet.Cells[i + 2, 1] = rst[i].ID;
+                workshet.Cells[i + 2, 2] = rst[i].Faculty_Code;
+                workshet.Cells[i + 2, 3] = rst[i].Student_id;
+                workshet.Cells[i + 2, 4] = rst[i]._internal;
+                workshet.Cells[i + 2, 5] = rst[i].Report_Writting;
+                workshet.Cells[i + 2, 6] = rst[i].Technical_Content;
+                workshet.Cells[i + 2, 7] = rst[i].Presentaion;
+                workshet.Cells[i + 2, 8] = rst[i].Total;
+
+            }
+            workbok.SaveAs("d:\\According Faculty.xls", Excel.XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue, Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
+            workbok.Close(true, misValue, misValue);
+            xlapp.Quit();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Excel.Application xlapp = new Microsoft.Office.Interop.Excel.Application();
+            if(xlapp==null)
+            {
+                MessageBox.Show("Microsoft Excel not installed", "Error", MessageBoxButtons.OKCancel);
+            }
+            Excel.Workbook exwork;
+            Excel.Worksheet exsheet;
+            object misValue = System.Reflection.Missing.Value;
+            exwork = xlapp.Workbooks.Add(misValue);
+            exsheet = (Excel.Worksheet)exwork.Worksheets.get_Item(1);
+            //exsheet.Cells[1, ] = "S.NO.";
+            exsheet.Cells[1, 1] = "Faculty Code";
+            exsheet.Cells[1, 2] = "Report";
+            exsheet.Cells[1, 3] = "Technical";
+            exsheet.Cells[1, 4] = "Presentation";
+            exsheet.Cells[1, 5] = "Total";
+            GroupByFac[] gfac = JsonConvert.DeserializeObject<GroupByFac[]>(studen_res_string);
+            for(int i=0;i<gfac.Length;i++)
+            {
+                exsheet.Cells[i + 2, 1] = gfac[i].Faculty_Code;
+                exsheet.Cells[i + 2, 2] = gfac[i].Report_Writting;
+                exsheet.Cells[i + 2, 3] = gfac[i].Technical_Content;
+                exsheet.Cells[i + 2, 4] = gfac[i].Presentaion;
+                exsheet.Cells[i + 2, 5] = gfac[i].Total;
+            }
+            exwork.SaveAs("d:\\According to Student.xls", Excel.XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue, Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
+            exwork.Close(true, misValue, misValue);
+            xlapp.Quit();
+
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            Excel.Application xlapp = new Microsoft.Office.Interop.Excel.Application();
+            Excel.Workbook exworkb;
+            Excel.Worksheet exsheet;
+            object misValue = System.Reflection.Missing.Value;
+            exworkb = xlapp.Workbooks.Add(misValue);
+            exsheet = exworkb.Worksheets.get_Item(1);
+            exsheet.Cells[1, 1] = "Roll No";
+            exsheet.Cells[1, 2] = "Guide";
+            exsheet.Cells[1, 3] = "Facuty Code";
+            exsheet.Cells[1, 4] = "Average";
+            student_admins[] stadmin = JsonConvert.DeserializeObject<student_admins[]>(rest);
+            for(int i=0;i<stadmin.Length;i++)
+            {
+                exsheet.Cells[i + 2, 1] = stadmin[i].Roll_no;
+                exsheet.Cells[i + 2, 2] = stadmin[i].Guide;
+                exsheet.Cells[i + 2, 3] = stadmin[i].Faculty_Code;
+                exsheet.Cells[i + 2, 4] = stadmin[i].avg_total;
+
+
+
+
+            }
+            exworkb.SaveAs("d:\\All Student.xls", Excel.XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue, Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
+            exworkb.Close(true, misValue, misValue);
+            xlapp.Quit();
+
+
+            //String rest
+
         }
     }
     public class Admin_change
