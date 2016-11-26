@@ -57,8 +57,7 @@ namespace Faculty
             else
             {
                 backgroundWorker.RunWorkerAsync();
-                int d = 3;
-
+                
             }
         }
         private void button2_Click(object sender, EventArgs e) { 
