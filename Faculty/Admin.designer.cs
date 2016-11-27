@@ -152,7 +152,7 @@
             this.adminToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(169, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(175, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
@@ -269,8 +269,8 @@
             this.splitContainer1.Panel2.Controls.Add(this.label4);
             this.splitContainer1.Panel2.Controls.Add(this.guide);
             this.splitContainer1.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel2_Paint);
-            this.splitContainer1.Size = new System.Drawing.Size(953, 455);
-            this.splitContainer1.SplitterDistance = 169;
+            this.splitContainer1.Size = new System.Drawing.Size(991, 603);
+            this.splitContainer1.SplitterDistance = 175;
             this.splitContainer1.TabIndex = 0;
             this.splitContainer1.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.splitContainer1_SplitterMoved);
             // 
@@ -291,7 +291,7 @@
             this.addfaculty.Dock = System.Windows.Forms.DockStyle.Fill;
             this.addfaculty.Location = new System.Drawing.Point(0, 0);
             this.addfaculty.Name = "addfaculty";
-            this.addfaculty.Size = new System.Drawing.Size(780, 455);
+            this.addfaculty.Size = new System.Drawing.Size(812, 603);
             this.addfaculty.TabIndex = 42;
             this.addfaculty.Paint += new System.Windows.Forms.PaintEventHandler(this.addfaculty_Paint);
             // 
@@ -306,7 +306,7 @@
             this.update_passwordPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.update_passwordPanel.Location = new System.Drawing.Point(0, 0);
             this.update_passwordPanel.Name = "update_passwordPanel";
-            this.update_passwordPanel.Size = new System.Drawing.Size(780, 455);
+            this.update_passwordPanel.Size = new System.Drawing.Size(812, 603);
             this.update_passwordPanel.TabIndex = 12;
             this.update_passwordPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.update_passwordPanel_Paint);
             // 
@@ -316,7 +316,7 @@
             this.list_student.Dock = System.Windows.Forms.DockStyle.Fill;
             this.list_student.Location = new System.Drawing.Point(0, 0);
             this.list_student.Name = "list_student";
-            this.list_student.Size = new System.Drawing.Size(780, 455);
+            this.list_student.Size = new System.Drawing.Size(812, 603);
             this.list_student.TabIndex = 15;
             // 
             // avgp
@@ -329,7 +329,7 @@
             this.avgp.Dock = System.Windows.Forms.DockStyle.Fill;
             this.avgp.Location = new System.Drawing.Point(0, 0);
             this.avgp.Name = "avgp";
-            this.avgp.Size = new System.Drawing.Size(780, 455);
+            this.avgp.Size = new System.Drawing.Size(812, 603);
             this.avgp.TabIndex = 3;
             this.avgp.Visible = false;
             // 
@@ -343,7 +343,7 @@
             this.GroupByfacPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GroupByfacPanel.Location = new System.Drawing.Point(0, 0);
             this.GroupByfacPanel.Name = "GroupByfacPanel";
-            this.GroupByfacPanel.Size = new System.Drawing.Size(780, 455);
+            this.GroupByfacPanel.Size = new System.Drawing.Size(812, 603);
             this.GroupByfacPanel.TabIndex = 4;
             // 
             // faculty_r
@@ -357,7 +357,7 @@
             this.faculty_r.Dock = System.Windows.Forms.DockStyle.Fill;
             this.faculty_r.Location = new System.Drawing.Point(0, 0);
             this.faculty_r.Name = "faculty_r";
-            this.faculty_r.Size = new System.Drawing.Size(780, 455);
+            this.faculty_r.Size = new System.Drawing.Size(812, 603);
             this.faculty_r.TabIndex = 3;
             // 
             // student_under_faculty
@@ -368,7 +368,7 @@
             this.student_under_faculty.Dock = System.Windows.Forms.DockStyle.Fill;
             this.student_under_faculty.Location = new System.Drawing.Point(0, 0);
             this.student_under_faculty.Name = "student_under_faculty";
-            this.student_under_faculty.Size = new System.Drawing.Size(780, 455);
+            this.student_under_faculty.Size = new System.Drawing.Size(812, 603);
             this.student_under_faculty.TabIndex = 4;
             // 
             // listView3
@@ -1064,7 +1064,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(953, 455);
+            this.ClientSize = new System.Drawing.Size(991, 603);
             this.Controls.Add(this.splitContainer1);
             this.MainMenuStrip = this.menuStrip1;
             this.MinimumSize = new System.Drawing.Size(969, 493);

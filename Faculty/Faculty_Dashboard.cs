@@ -191,6 +191,27 @@ namespace Faculty
             if(rp.response_code==100)
             {
                 MessageBox.Show("Updated Successfully", "Updated");
+
+                //XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXxx
+
+                String Category = "Faculty";
+                String Action = "Broad Area";
+                String by = fac_idf;           
+
+                String urle = murlf + "log_add";
+                WebClient wc11 = new WebClient();
+                NameValueCollection value = new NameValueCollection();
+
+                value.Add("category", Category);
+                value.Add("action", Action);
+                value.Add("by_w", by);
+                byte[] stud_resp = wc11.UploadValues(urle, value);
+                //XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+
+
+
+
             }
             else
                 if(rp.response_code==101)
@@ -258,6 +279,24 @@ namespace Faculty
             if (rp.responce_code == 100)
             {
                 MessageBox.Show("Updated Successfully", "Updated");
+                //XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXxx
+
+                String Category = "Faculty";
+                String Action = "Internal Marks";
+                String by = fac_idf;
+
+                String urle = murlf + "log_add";
+                WebClient wc11 = new WebClient();
+                NameValueCollection value = new NameValueCollection();
+
+                value.Add("category", Category);
+                value.Add("action", Action);
+                value.Add("by_w", by);
+                byte[] stud_resp = wc11.UploadValues(urle, value);
+                //XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+
+
             }
             else
                 if (rp.responce_code == 101)
@@ -287,6 +326,26 @@ namespace Faculty
             if(sttp.response_code == 100)
             {
                 MessageBox.Show("Task Added", "Task Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                //XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXxx
+
+                String Category = "Faculty";
+                String Action = "Task Assign";
+                String by = fac_idf;
+
+                String urle = murlf + "log_add";
+                WebClient wc11 = new WebClient();
+                NameValueCollection value = new NameValueCollection();
+
+                value.Add("category", Category);
+                value.Add("action", Action);
+                value.Add("by_w", by);
+                byte[] stud_resp = wc11.UploadValues(urle, value);
+                //XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+
+
+
             }
             else
             {
@@ -445,6 +504,25 @@ namespace Faculty
             if(str.response_code==100)
             {
                 MessageBox.Show("Task Status Updated", "Updated", MessageBoxButtons.OK);
+
+                //XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXxx
+
+                String Category = "Faculty";
+                String Action = "Status";
+                String by = fac_idf;
+
+                String urle = murlf + "log_add";
+                WebClient wc11 = new WebClient();
+                NameValueCollection value = new NameValueCollection();
+
+                value.Add("category", Category);
+                value.Add("action", Action);
+                value.Add("by_w", by);
+                byte[] stud_resp = wc11.UploadValues(urle, value);
+                //XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+
+
             }
             else
             {

@@ -73,6 +73,29 @@
             this.st_topic = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button12 = new System.Windows.Forms.Button();
+            this.button14 = new System.Windows.Forms.Button();
+            this.button13 = new System.Windows.Forms.Button();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.misc_textbox = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.mmlable = new System.Windows.Forms.Label();
+            this.Remarks_textbox = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.total_textview = new System.Windows.Forms.Label();
+            this.class_textview = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.Presentation_textbox = new System.Windows.Forms.TextBox();
+            this.Technical_textbox = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.Report_textbox = new System.Windows.Forms.TextBox();
+            this.name_textview = new System.Windows.Forms.Label();
+            this.Roll_comboBox = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
             this.marksheetbox = new System.Windows.Forms.GroupBox();
             this.label17 = new System.Windows.Forms.Label();
@@ -80,6 +103,7 @@
             this.evaluated_list = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -97,38 +121,14 @@
             this.printDocument2 = new System.Drawing.Printing.PrintDocument();
             this.backgroundWorker = new System.ComponentModel.BackgroundWorker();
             this.werror = new System.Windows.Forms.ErrorProvider(this.components);
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.misc_textbox = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.mmlable = new System.Windows.Forms.Label();
-            this.Roll_comboBox = new System.Windows.Forms.ComboBox();
-            this.Remarks_textbox = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.total_textview = new System.Windows.Forms.Label();
-            this.class_textview = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.Presentation_textbox = new System.Windows.Forms.TextBox();
-            this.Technical_textbox = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.Report_textbox = new System.Windows.Forms.TextBox();
-            this.name_textview = new System.Windows.Forms.Label();
-            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.button12 = new System.Windows.Forms.Button();
-            this.button14 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.marksheetbox.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.werror)).BeginInit();
-            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -551,188 +551,35 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Visible = false;
             // 
-            // label16
+            // button12
             // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("MS Reference Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.Navy;
-            this.label16.Location = new System.Drawing.Point(298, 18);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(279, 29);
-            this.label16.TabIndex = 4;
-            this.label16.Text = "MARKS EVALUATION";
+            this.button12.Location = new System.Drawing.Point(222, 283);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(75, 23);
+            this.button12.TabIndex = 12;
+            this.button12.Text = "Clear";
+            this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
-            // marksheetbox
+            // button14
             // 
-            this.marksheetbox.Controls.Add(this.label17);
-            this.marksheetbox.Controls.Add(this.button15);
-            this.marksheetbox.Controls.Add(this.evaluated_list);
-            this.marksheetbox.Location = new System.Drawing.Point(84, 395);
-            this.marksheetbox.Name = "marksheetbox";
-            this.marksheetbox.Size = new System.Drawing.Size(954, 352);
-            this.marksheetbox.TabIndex = 11;
-            this.marksheetbox.TabStop = false;
-            this.marksheetbox.Visible = false;
+            this.button14.Location = new System.Drawing.Point(575, 283);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(75, 23);
+            this.button14.TabIndex = 11;
+            this.button14.Text = "View";
+            this.button14.UseVisualStyleBackColor = true;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
             // 
-            // label17
+            // button13
             // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("MS Reference Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.Color.Navy;
-            this.label17.Location = new System.Drawing.Point(239, 18);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(436, 29);
-            this.label17.TabIndex = 5;
-            this.label17.Text = "STUDENTS EVALUATTED BY YOU";
-            // 
-            // button15
-            // 
-            this.button15.Location = new System.Drawing.Point(381, 323);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(141, 23);
-            this.button15.TabIndex = 1;
-            this.button15.Text = "Print Marks";
-            this.button15.UseVisualStyleBackColor = true;
-            // 
-            // evaluated_list
-            // 
-            this.evaluated_list.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader8,
-            this.columnHeader3,
-            this.columnHeader4,
-            this.columnHeader5,
-            this.columnHeader6,
-            this.columnHeader7});
-            this.evaluated_list.Location = new System.Drawing.Point(7, 68);
-            this.evaluated_list.Name = "evaluated_list";
-            this.evaluated_list.Size = new System.Drawing.Size(952, 229);
-            this.evaluated_list.TabIndex = 0;
-            this.evaluated_list.UseCompatibleStateImageBehavior = false;
-            this.evaluated_list.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "S.No";
-            this.columnHeader1.Width = 70;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Roll Number";
-            this.columnHeader2.Width = 148;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Name";
-            this.columnHeader3.Width = 105;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Report Writing";
-            this.columnHeader4.Width = 137;
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "Technical Content";
-            this.columnHeader5.Width = 170;
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "Presentation ";
-            this.columnHeader6.Width = 139;
-            // 
-            // columnHeader7
-            // 
-            this.columnHeader7.Text = "Total";
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.chooseSemesterToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(3, 3);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1299, 24);
-            this.menuStrip1.TabIndex = 10;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // chooseSemesterToolStripMenuItem
-            // 
-            this.chooseSemesterToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.oddSemesterToolStripMenuItem,
-            this.evenSemesterToolStripMenuItem});
-            this.chooseSemesterToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chooseSemesterToolStripMenuItem.Name = "chooseSemesterToolStripMenuItem";
-            this.chooseSemesterToolStripMenuItem.Size = new System.Drawing.Size(116, 20);
-            this.chooseSemesterToolStripMenuItem.Text = "Choose Semester";
-            // 
-            // oddSemesterToolStripMenuItem
-            // 
-            this.oddSemesterToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.midSemesterToolStripMenuItem,
-            this.endSemesterToolStripMenuItem});
-            this.oddSemesterToolStripMenuItem.Name = "oddSemesterToolStripMenuItem";
-            this.oddSemesterToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
-            this.oddSemesterToolStripMenuItem.Text = "Odd Semester";
-            // 
-            // midSemesterToolStripMenuItem
-            // 
-            this.midSemesterToolStripMenuItem.Name = "midSemesterToolStripMenuItem";
-            this.midSemesterToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.midSemesterToolStripMenuItem.Text = "Mid Semester";
-            this.midSemesterToolStripMenuItem.Click += new System.EventHandler(this.midSemesterToolStripMenuItem_Click);
-            // 
-            // endSemesterToolStripMenuItem
-            // 
-            this.endSemesterToolStripMenuItem.Name = "endSemesterToolStripMenuItem";
-            this.endSemesterToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.endSemesterToolStripMenuItem.Text = "End Semester";
-            this.endSemesterToolStripMenuItem.Click += new System.EventHandler(this.endSemesterToolStripMenuItem_Click);
-            // 
-            // evenSemesterToolStripMenuItem
-            // 
-            this.evenSemesterToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.midSemesterToolStripMenuItem1});
-            this.evenSemesterToolStripMenuItem.Name = "evenSemesterToolStripMenuItem";
-            this.evenSemesterToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
-            this.evenSemesterToolStripMenuItem.Text = "Even Semester";
-            // 
-            // midSemesterToolStripMenuItem1
-            // 
-            this.midSemesterToolStripMenuItem1.Name = "midSemesterToolStripMenuItem1";
-            this.midSemesterToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.midSemesterToolStripMenuItem1.Text = "Mid Semester";
-            this.midSemesterToolStripMenuItem1.Click += new System.EventHandler(this.midSemesterToolStripMenuItem1_Click);
-            // 
-            // printDocument1
-            // 
-            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
-            // 
-            // printPreviewDialog1
-            // 
-            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
-            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
-            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
-            this.printPreviewDialog1.Document = this.printDocument2;
-            this.printPreviewDialog1.Enabled = true;
-            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
-            this.printPreviewDialog1.Name = "printPreviewDialog1";
-            this.printPreviewDialog1.Visible = false;
-            this.printPreviewDialog1.Load += new System.EventHandler(this.printPreviewDialog1_Load);
-            // 
-            // printDocument2
-            // 
-            this.printDocument2.DocumentName = "pr";
-            this.printDocument2.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument2_PrintPage);
-            // 
-            // backgroundWorker
-            // 
-            this.backgroundWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker_DoWork);
-            // 
-            // werror
-            // 
-            this.werror.ContainerControl = this;
+            this.button13.Location = new System.Drawing.Point(405, 283);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(75, 23);
+            this.button13.TabIndex = 10;
+            this.button13.Text = "Submit ";
+            this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -750,7 +597,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 101F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 53F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 161F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 8F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 10F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Controls.Add(this.misc_textbox, 3, 1);
             this.tableLayoutPanel1.Controls.Add(this.textBox1, 9, 0);
@@ -779,7 +626,7 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 64.60674F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 35.39326F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(969, 197);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(971, 197);
             this.tableLayoutPanel1.TabIndex = 9;
             // 
             // misc_textbox
@@ -796,7 +643,7 @@
             this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox1.Location = new System.Drawing.Point(962, 52);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(2, 22);
+            this.textBox1.Size = new System.Drawing.Size(4, 22);
             this.textBox1.TabIndex = 21;
             // 
             // mmlable
@@ -809,17 +656,6 @@
             this.mmlable.TabIndex = 20;
             this.mmlable.Text = "Literature Survey and Problem Identification (10)";
             this.mmlable.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // Roll_comboBox
-            // 
-            this.Roll_comboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.Roll_comboBox.FormattingEnabled = true;
-            this.Roll_comboBox.Location = new System.Drawing.Point(5, 150);
-            this.Roll_comboBox.Name = "Roll_comboBox";
-            this.Roll_comboBox.Size = new System.Drawing.Size(143, 24);
-            this.Roll_comboBox.TabIndex = 10;
-            this.Roll_comboBox.Text = "Select Roll No.";
-            this.Roll_comboBox.SelectedIndexChanged += new System.EventHandler(this.Roll_comboBox_SelectedIndexChanged);
             // 
             // Remarks_textbox
             // 
@@ -986,41 +822,204 @@
             this.name_textview.TabIndex = 15;
             this.name_textview.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // Roll_comboBox
+            // 
+            this.Roll_comboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.Roll_comboBox.FormattingEnabled = true;
+            this.Roll_comboBox.Location = new System.Drawing.Point(5, 149);
+            this.Roll_comboBox.Name = "Roll_comboBox";
+            this.Roll_comboBox.Size = new System.Drawing.Size(143, 24);
+            this.Roll_comboBox.TabIndex = 10;
+            this.Roll_comboBox.Text = "Select Roll No.";
+            this.Roll_comboBox.SelectedIndexChanged += new System.EventHandler(this.Roll_comboBox_SelectedIndexChanged);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("MS Reference Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.Navy;
+            this.label16.Location = new System.Drawing.Point(298, 18);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(279, 29);
+            this.label16.TabIndex = 4;
+            this.label16.Text = "MARKS EVALUATION";
+            // 
+            // marksheetbox
+            // 
+            this.marksheetbox.Controls.Add(this.label17);
+            this.marksheetbox.Controls.Add(this.button15);
+            this.marksheetbox.Controls.Add(this.evaluated_list);
+            this.marksheetbox.Location = new System.Drawing.Point(84, 395);
+            this.marksheetbox.Name = "marksheetbox";
+            this.marksheetbox.Size = new System.Drawing.Size(954, 352);
+            this.marksheetbox.TabIndex = 11;
+            this.marksheetbox.TabStop = false;
+            this.marksheetbox.Visible = false;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("MS Reference Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.Color.Navy;
+            this.label17.Location = new System.Drawing.Point(239, 18);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(436, 29);
+            this.label17.TabIndex = 5;
+            this.label17.Text = "STUDENTS EVALUATTED BY YOU";
+            // 
+            // button15
+            // 
+            this.button15.Location = new System.Drawing.Point(381, 323);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(141, 23);
+            this.button15.TabIndex = 1;
+            this.button15.Text = "Print Marks";
+            this.button15.UseVisualStyleBackColor = true;
+            // 
+            // evaluated_list
+            // 
+            this.evaluated_list.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader8,
+            this.columnHeader3,
+            this.columnHeader4,
+            this.columnHeader5,
+            this.columnHeader6,
+            this.columnHeader7});
+            this.evaluated_list.Location = new System.Drawing.Point(7, 68);
+            this.evaluated_list.Name = "evaluated_list";
+            this.evaluated_list.Size = new System.Drawing.Size(952, 229);
+            this.evaluated_list.TabIndex = 0;
+            this.evaluated_list.UseCompatibleStateImageBehavior = false;
+            this.evaluated_list.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "S.No";
+            this.columnHeader1.Width = 70;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Roll Number";
+            this.columnHeader2.Width = 148;
+            // 
             // columnHeader8
             // 
-            this.columnHeader8.DisplayIndex = 3;
             this.columnHeader8.Text = "Literature Survey and Problem Identification";
             this.columnHeader8.Width = 142;
             // 
-            // button12
+            // columnHeader3
             // 
-            this.button12.Location = new System.Drawing.Point(222, 283);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(75, 23);
-            this.button12.TabIndex = 12;
-            this.button12.Text = "Clear";
-            this.button12.UseVisualStyleBackColor = true;
-            this.button12.Click += new System.EventHandler(this.button12_Click);
+            this.columnHeader3.Text = "Name";
+            this.columnHeader3.Width = 105;
             // 
-            // button14
+            // columnHeader4
             // 
-            this.button14.Location = new System.Drawing.Point(575, 283);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(75, 23);
-            this.button14.TabIndex = 11;
-            this.button14.Text = "View";
-            this.button14.UseVisualStyleBackColor = true;
-            this.button14.Click += new System.EventHandler(this.button14_Click);
+            this.columnHeader4.Text = "Report Writing";
+            this.columnHeader4.Width = 137;
             // 
-            // button13
+            // columnHeader5
             // 
-            this.button13.Location = new System.Drawing.Point(405, 283);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(75, 23);
-            this.button13.TabIndex = 10;
-            this.button13.Text = "Submit ";
-            this.button13.UseVisualStyleBackColor = true;
-            this.button13.Click += new System.EventHandler(this.button13_Click);
+            this.columnHeader5.Text = "Technical Content";
+            this.columnHeader5.Width = 170;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Presentation ";
+            this.columnHeader6.Width = 139;
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "Total";
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.chooseSemesterToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(3, 3);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1299, 24);
+            this.menuStrip1.TabIndex = 10;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // chooseSemesterToolStripMenuItem
+            // 
+            this.chooseSemesterToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.oddSemesterToolStripMenuItem,
+            this.evenSemesterToolStripMenuItem});
+            this.chooseSemesterToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chooseSemesterToolStripMenuItem.Name = "chooseSemesterToolStripMenuItem";
+            this.chooseSemesterToolStripMenuItem.Size = new System.Drawing.Size(116, 20);
+            this.chooseSemesterToolStripMenuItem.Text = "Choose Semester";
+            // 
+            // oddSemesterToolStripMenuItem
+            // 
+            this.oddSemesterToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.midSemesterToolStripMenuItem,
+            this.endSemesterToolStripMenuItem});
+            this.oddSemesterToolStripMenuItem.Name = "oddSemesterToolStripMenuItem";
+            this.oddSemesterToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.oddSemesterToolStripMenuItem.Text = "Odd Semester";
+            // 
+            // midSemesterToolStripMenuItem
+            // 
+            this.midSemesterToolStripMenuItem.Name = "midSemesterToolStripMenuItem";
+            this.midSemesterToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.midSemesterToolStripMenuItem.Text = "Mid Semester";
+            this.midSemesterToolStripMenuItem.Click += new System.EventHandler(this.midSemesterToolStripMenuItem_Click);
+            // 
+            // endSemesterToolStripMenuItem
+            // 
+            this.endSemesterToolStripMenuItem.Name = "endSemesterToolStripMenuItem";
+            this.endSemesterToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.endSemesterToolStripMenuItem.Text = "End Semester";
+            this.endSemesterToolStripMenuItem.Click += new System.EventHandler(this.endSemesterToolStripMenuItem_Click);
+            // 
+            // evenSemesterToolStripMenuItem
+            // 
+            this.evenSemesterToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.midSemesterToolStripMenuItem1});
+            this.evenSemesterToolStripMenuItem.Name = "evenSemesterToolStripMenuItem";
+            this.evenSemesterToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.evenSemesterToolStripMenuItem.Text = "Even Semester";
+            // 
+            // midSemesterToolStripMenuItem1
+            // 
+            this.midSemesterToolStripMenuItem1.Name = "midSemesterToolStripMenuItem1";
+            this.midSemesterToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.midSemesterToolStripMenuItem1.Text = "Mid Semester";
+            this.midSemesterToolStripMenuItem1.Click += new System.EventHandler(this.midSemesterToolStripMenuItem1_Click);
+            // 
+            // printDocument1
+            // 
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+            // 
+            // printPreviewDialog1
+            // 
+            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog1.Document = this.printDocument2;
+            this.printPreviewDialog1.Enabled = true;
+            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
+            this.printPreviewDialog1.Name = "printPreviewDialog1";
+            this.printPreviewDialog1.Visible = false;
+            this.printPreviewDialog1.Load += new System.EventHandler(this.printPreviewDialog1_Load);
+            // 
+            // printDocument2
+            // 
+            this.printDocument2.DocumentName = "pr";
+            this.printDocument2.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument2_PrintPage);
+            // 
+            // backgroundWorker
+            // 
+            this.backgroundWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker_DoWork);
+            // 
+            // werror
+            // 
+            this.werror.ContainerControl = this;
             // 
             // Faculty_Dashboard
             // 
@@ -1028,7 +1027,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1130, 735);
+            this.ClientSize = new System.Drawing.Size(1170, 735);
             this.Controls.Add(this.tabControl1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Faculty_Dashboard";
@@ -1041,13 +1040,13 @@
             this.tabPage2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.marksheetbox.ResumeLayout(false);
             this.marksheetbox.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.werror)).EndInit();
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
 
         }

@@ -139,7 +139,22 @@ namespace Faculty
             string a = results.message;
             MessageBox.Show(a);
 
+            //XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXxx
 
+            String Category = "Admin";
+            String Action = "Student Registation";
+            String by = admin_user.Text;
+            Faculty_Pannel st = new Faculty_Pannel();
+
+            String urle = murlf + "log_add";
+            WebClient wc11 = new WebClient();
+            NameValueCollection value = new NameValueCollection();
+
+            value.Add("category", Category);
+            value.Add("action", Action);
+            value.Add("by_w", by);
+            byte[] stud_resp = wc11.UploadValues(urle, value);
+            //XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
         }
 
@@ -300,6 +315,24 @@ namespace Faculty
                     MessageBox.Show("You  are now Registered with us", "Success");
                     //splitContainer1.Panel2.Show();
                     // panel1.Hide();
+
+
+                    //XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXxx
+
+                    String Category = "Admin";
+                    String Action = "Faculty Register";
+                    String by = admin_user.Text;
+                    Faculty_Pannel st = new Faculty_Pannel();
+
+                    String urle = murlf + "log_add";
+                    WebClient wc11 = new WebClient();
+                    NameValueCollection value = new NameValueCollection();
+
+                    value.Add("category", Category);
+                    value.Add("action", Action);
+                    value.Add("by_w", by);
+                    byte[] stud_resp = wc11.UploadValues(urle, value);
+                    //XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
                 }
                 else
