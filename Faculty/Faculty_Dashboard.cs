@@ -23,11 +23,20 @@ namespace Faculty
 
         String nm = null;
         String murlf = "http://localhost/Student_Desigatation/";
-      //  String murlf = "http://172.25.5.54:8081/student_desigatation/";
+        //  String murlf = "http://172.25.5.54:8081/student_desigatation/";
+        String typeOfdesertation = "";
+        String misc_marks = "";
+        String report_marks = "";
+        String technical_marks = "";
+        String presentation_marks = "";
+        String total_marks = "";
+        String roll_no = "";
+        static String fac_idf = "";
         public Faculty_Dashboard(String nam)
         {
             InitializeComponent();
             nm = nam;
+            fac_idf = nam;
             Faculty_Pannel fcp = new Faculty_Pannel();
             fcp.Visible = false;
          //   MessageBox.Show("Dashboad");
@@ -55,7 +64,23 @@ namespace Faculty
             Faculty_Pannel frm = new Faculty_Pannel();
             frm.Visible = false;
             // MessageBox.Show(nam);
-           
+            
+            werror = new System.Windows.Forms.ErrorProvider();
+            // String url = "http://gubappwebservices.esy.es/out_of_faculty";
+            String url = murlf + "out_of_faculty";
+            WebClient wc1 = new WebClient();
+            NameValueCollection form = new NameValueCollection();
+            form.Add("fact_id", nam);
+            byte[] otherstudents = wc1.UploadValues(url, form);
+            String othrstud = Encoding.UTF8.GetString(otherstudents);
+            OtherStudent[] jsa = JsonConvert.DeserializeObject<OtherStudent[]>(othrstud);
+            //int stud_len = jsa.Length;            
+            int j = 0;
+            while (j < jsa.Length)
+            {
+                Roll_comboBox.Items.Insert(j, jsa[j].Roll_no);
+                j++;
+            }
         }
          
 
@@ -133,51 +158,13 @@ namespace Faculty
            
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            //     String fa_c = resulttxt.Text;
-           // ListViewItem ltv = new ListViewItem("Sa");
-            WebClient we = new WebClient();
-            NameValueCollection nform = new NameValueCollection();
-            nform.Add("fac_id", nm);
-            String urls = murlf+"student_data_retr_dir_faculty";
-            byte[] data = we.UploadValues(urls, nform);
-            String resp = Encoding.UTF8.GetString(data);
-            //MessageBox.Show(resp);
-            // JavaScriptSerializer jser = new JavaScriptSerializer();
-         //   List<stu_data_ser> ls = new List<stu_data_ser>();
-           stu_data_ser[] s_der = JsonConvert.DeserializeObject<stu_data_ser[]>(resp);
-            int lengt = s_der.Length;
-         //   MessageBox.Show("length of array "+lengt.ToString());
-            int i = 0;
-            while (lengt > i)
-            {
-                ListViewItem lvti = new ListViewItem(s_der[i].name);
-                //MessageBox.Show(s_der[0].name);
-                lvti.SubItems.Add(s_der[i].roll_no);
-                //             MessageBox.Show(s_der[1].roll_no);
-
-                lvti.SubItems.Add(s_der[i].branch);
-                //           MessageBox.Show(s_der[1].branch);
-
-                lvti.SubItems.Add(s_der[i].topic);
-                //         MessageBox.Show(s_der[0].topic);
-
-                lvti.SubItems.Add(s_der[i].broad_area);
-                //     MessageBox.Show(s_der[1].broad_area);
-                listView1.Items.Add(lvti);
-                i++;
-            }
-
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
+     /*   private void button1_Click_1(object sender, EventArgs e)
         {
 
             Evaulation ec = new Evaulation(nm);
             ec.Show();
             //    Evaulation e
-        }
+        }*/
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -544,6 +531,323 @@ namespace Faculty
 
 
         }
+
+        private void midSemesterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            mmlable.Text = "Literature Survey and Problem Identification (10)";
+            groupBox1.Show();
+            typeOfdesertation = "mid1";
+        }
+
+        private void endSemesterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            mmlable.Text = "Planning and Research Methodology with Partial Implementation (10)";
+            groupBox1.Show();
+            typeOfdesertation = "end1";
+        }
+
+        private void midSemesterToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            mmlable.Text = "Literature Survey and Problem Identification (10)";
+            groupBox1.Show();
+            typeOfdesertation = "mid2";
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+
+            if (backgroundWorker.IsBusy)
+            {
+                MessageBox.Show("Already in progress");
+            }
+            else
+            {
+                backgroundWorker.RunWorkerAsync();
+
+            }
+        }
+
+        private void backgroundWorker_DoWork(object sender, DoWorkEventArgs e)
+        {
+            if (!roll_no.Equals("") && !report_marks.Equals("") && !technical_marks.Equals("") && !presentation_marks.Equals("") && !misc_marks.Equals("") && !total_marks.Equals(""))
+            {
+                werror.SetError(this.button13, "");
+                werror.Clear();
+                // roll_no = Roll_comboBox.Text;
+                String remarks = Remarks_textbox.Text;
+                String uri = murlf + "marks_evaluation";
+                //   String uri = "http://gubappwebservices.esy.es/marks_evaluation";
+                WebClient wc = new WebClient();
+                NameValueCollection form = new NameValueCollection();
+                form.Add("facult_id", fac_idf);
+                form.Add("studen_id", roll_no);
+                form.Add("report_marks", report_marks);
+                form.Add("technical_marks", technical_marks);
+                form.Add("presentation_marks", presentation_marks);
+                form.Add("total", total_marks);
+                form.Add("remark", remarks);
+                form.Add("misc_marks", misc_marks);
+                form.Add("type", typeOfdesertation);
+                byte[] resp = wc.UploadValues(uri, form);
+                String res_string = Encoding.UTF8.GetString(resp);
+                JavaScriptSerializer js = new System.Web.Script.Serialization.JavaScriptSerializer();
+                marks_json resp_json = js.Deserialize<marks_json>(res_string);
+                if (resp_json.response_code == 100)
+                {
+                    //Response_label.ForeColor = Color.Green;
+                    // Response_label.Text = "Marks Submitted Successfully";
+                    MessageBox.Show("Marks Submitted Successfully!", "Marks Evaluation Successfull");
+
+                }
+                else if (resp_json.response_code == 110)
+                {
+                    MessageBox.Show("Marks Updated Successfully!", "Marks Updation Successfull");
+
+                }
+                else
+                {
+                    MessageBox.Show("Something went wrong...Please Try Again", "Marks Evaluation Failed");
+                }
+                // e.Result = res_string;
+
+            }
+            else
+            {
+                werror.SetError(this.button13, "Fill all the details");
+            }
+        }
+        
+
+        private void Report_textbox_Leave(object sender, EventArgs e)
+        {
+            report_marks = Report_textbox.Text;
+            double rm;
+            Double.TryParse(report_marks, out rm);
+            if (rm < 0 || rm > 5)
+            {
+                werror.SetError(this.Report_textbox, "Only marks Between 0 to 5 allowed");
+                Report_textbox.Focus();
+            }
+            else
+            {
+                werror.SetError(this.Report_textbox, "");
+                werror.Clear();
+            }
+        }
+
+        private void Technical_textbox_Leave(object sender, EventArgs e)
+        {
+            technical_marks = Technical_textbox.Text;
+            double tm;
+            Double.TryParse(technical_marks, out tm);
+            if (tm < 0 || tm > 10)
+            {
+                werror.SetError(this.Technical_textbox, "Only marks Between 0 to 10 allowed");
+                Technical_textbox.Focus();
+
+            }
+            else
+            {
+                werror.SetError(this.Technical_textbox, "");
+                werror.Clear();
+            }
+        }
+
+        private void Presentation_textbox_Leave(object sender, EventArgs e)
+        {
+
+            presentation_marks = Presentation_textbox.Text;
+            double pm;
+            Double.TryParse(presentation_marks, out pm);
+            if (pm < 0 || pm > 5)
+            {
+                werror.SetError(this.Presentation_textbox, "Only marks Between 0 to 5 allowed");
+                Presentation_textbox.Focus();
+            }
+            else
+            {
+                werror.SetError(this.Presentation_textbox, "");
+                werror.Clear();
+                report_marks = Report_textbox.Text;
+                technical_marks = Technical_textbox.Text;
+                presentation_marks = Presentation_textbox.Text;
+                misc_marks = misc_textbox.Text;
+                if (misc_marks.Equals("") || report_marks.Equals("") || technical_marks.Equals("") || presentation_marks.Equals(""))
+                {
+                    werror.SetError(this.total_textview, "Some marks field may be empty ");
+                }
+                else
+                {
+                    werror.SetError(this.total_textview, "");
+                    werror.Clear();
+                    double rm;
+                    Double.TryParse(report_marks, out rm);
+                    double tm;
+                    Double.TryParse(technical_marks, out tm);
+                    double mm;
+                    Double.TryParse(misc_marks, out mm);
+                    Double.TryParse(presentation_marks, out pm);
+                    double total = mm+rm + tm + pm;
+                    total_marks = total.ToString();
+                    total_textview.Text = total_marks;
+                }
+            }
+        }
+
+        private void total_textview_Leave(object sender, EventArgs e)
+        {
+
+            double tm;
+            Double.TryParse(total_marks, out tm);
+            if (tm < 0 || tm > 10)
+            {
+                werror.SetError(this.total_textview, "Only marks Between 0 to 10 allowed");
+                total_textview.Focus();
+            }
+            else
+            {
+                werror.SetError(this.total_textview, "");
+                werror.Clear();
+            }
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            Roll_comboBox.Text = "Select Roll No.";
+            werror.Clear();
+            Roll_comboBox.Focus();
+            name_textview.Text = "";
+            class_textview.Text = "";
+            Report_textbox.Clear();
+            Technical_textbox.Clear();
+            Presentation_textbox.Clear();
+            misc_textbox.Clear();
+            total_textview.Text = "";
+            Remarks_textbox.Text = "";
+            werror.SetError(this.Report_textbox, "");
+            werror.SetError(this.Technical_textbox, "");
+            werror.SetError(this.Presentation_textbox, "");
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            marksheetbox.Show();
+            // String url = "http://gubappwebservices.esy.es/student_evaluted";
+            String url = murlf + "student_evaluted";
+            WebClient wc1 = new WebClient();
+            NameValueCollection form = new NameValueCollection();
+            form.Add("fact_id", fac_idf);
+            byte[] eval_stud = wc1.UploadValues(url, form);
+            String evalstud_str = Encoding.UTF8.GetString(eval_stud);
+            EvaluatedStudents[] ev_stud = JsonConvert.DeserializeObject<EvaluatedStudents[]>(evalstud_str);
+            int lengt = ev_stud.Length;
+            int i = 0;
+            evaluated_list.Items.Clear();
+            while (lengt > i)
+            {
+                String Sr = (i + 1).ToString();
+                ListViewItem mylist = new ListViewItem(Sr);
+                mylist.SubItems.Add(ev_stud[i].Student_id);                
+                mylist.SubItems.Add(ev_stud[i].planning_impl_rest);
+                mylist.SubItems.Add(ev_stud[i].Name);
+                mylist.SubItems.Add(ev_stud[i].Report_Writting);
+                mylist.SubItems.Add(ev_stud[i].Technical_Content);
+                mylist.SubItems.Add(ev_stud[i].Presentaion);
+                mylist.SubItems.Add(ev_stud[i].Total);
+                evaluated_list.Items.Add(mylist);
+                i++;
+            }
+        }
+
+        private void tableLayoutPanel1_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Roll_comboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // String url = "http://gubappwebservices.esy.es/Student_detail_retrive_faculty";
+            String url = murlf + "Student_detail_retrive_faculty";
+            roll_no = Roll_comboBox.Text;
+            if (!roll_no.Equals("Select Roll No."))
+            {
+                WebClient wc1 = new WebClient();
+                NameValueCollection value = new NameValueCollection();
+                value.Add("roll_no", roll_no);
+                value.Add("facult_id", fac_idf);
+                byte[] stud_resp = wc1.UploadValues(url, value);
+                String res_string = Encoding.UTF8.GetString(stud_resp);
+                Student_json[] result = JsonConvert.DeserializeObject<Student_json[]>(res_string);
+                // marks_exist[] me = JsonConvert.DeserializeObject<marks_exist[]>(res_string);
+                if (result.Length > 0)
+                {
+                    //  String url2 = "http://gubappwebservices.esy.es/mark_already_exist";
+                    String url2 = murlf + "mark_already_exist";
+                    WebClient wc2 = new WebClient();
+                    NameValueCollection value2 = new NameValueCollection();
+                    value2.Add("facult_id", fac_idf);
+                    value2.Add("studen_id", roll_no);
+                    byte[] stud_resp2 = wc2.UploadValues(url2, value2);
+                    String roll_alredy = Encoding.UTF8.GetString(stud_resp2);
+                    JavaScriptSerializer js2 = new System.Web.Script.Serialization.JavaScriptSerializer();
+                    //JavaScriptSerializer jd1=
+                    marks_exist resp_json2 = js2.Deserialize<marks_exist>(roll_alredy);
+                    if (resp_json2.response_code == 100)
+                    {
+                        String name = result[0].Name.ToString();
+                        String cl = result[0].Branch.ToString();
+                        name_textview.Text = name;
+                        class_textview.Text = cl;
+                    }
+                    else if (resp_json2.response_code == 106)
+                    {
+                        // werror.SetError(this.Roll_textbox, "Already evaluatted");
+                        //Roll_textbox.Focus();
+                        DialogResult checkmsgbox = MessageBox.Show("Click on Ok to update marks", "Already evaluated", MessageBoxButtons.OKCancel);
+                        if (checkmsgbox == DialogResult.OK)
+                        {
+                            String name = result[0].Name.ToString();
+                            String cl = result[0].Branch.ToString();
+                            name_textview.Text = name;
+                            class_textview.Text = cl;
+                        }
+                        else
+                        {
+                            Roll_comboBox.Text = "Select Roll No.";
+                            Roll_comboBox.Focus();
+                        }
+                    }
+                }
+                else
+                {
+                    werror.SetError(this.Roll_comboBox, "Student with this Roll No may have not registered ");
+                    Roll_comboBox.Focus();
+                }
+            }
+            else
+            {
+                Roll_comboBox.Focus();
+                //   werror.SetError(this.Roll_textbox, "");
+            }
+        }
+
+        private void misc_textbox_Leave(object sender, EventArgs e)
+        {
+            misc_marks = misc_textbox.Text;
+            double mm;
+            Double.TryParse(misc_marks, out mm);
+            if (mm < 0 || mm > 10)
+            {
+                werror.SetError(this.misc_textbox, "Only marks Between 0 to 10 allowed");
+                misc_textbox.Focus();
+
+            }
+            else
+            {
+                werror.SetError(this.misc_textbox, "");
+                werror.Clear();
+            }
+        }
     }
     class task_id_ass
         {
@@ -574,6 +878,43 @@ namespace Faculty
     class internal_marks
     {
         public int responce_code;
+    }
+    public class Student_json
+    {
+        public string Name { get; set; }
+        public string Branch { get; set; }
+        public string broad_area { get; set; }
+    }
+    public class marks_json
+    {
+        public int response_code { get; set; }
+    }
+    public class marks_exist
+    {
+        public int response_code { get; set; }
+    }
+    public class EvaluatedStudents
+    {
+
+        public string Student_id { get; set; }
+        public string Name { get; set; }
+        public string Report_Writting { get; set; }
+        public string Technical_Content { get; set; }
+        public string planning_impl_rest { get; set; }
+        public string Presentaion { get; set; }
+        public string Total { get; set; }
+
+    }
+
+    public class Rootobject
+    {
+        public OtherStudent[] Property1 { get; set; }
+    }
+
+    public class OtherStudent
+    {
+        public string Roll_no { get; set; }
+
     }
 }
 

@@ -60,12 +60,6 @@
     <Compile Include="admin_login.Designer.cs">
       <DependentUpon>admin_login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Evaulation.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Evaulation.Designer.cs">
-      <DependentUpon>Evaulation.cs</DependentUpon>
-    </Compile>
     <Compile Include="Faculty_Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,9 +98,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="admin_login.resx">
       <DependentUpon>admin_login.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Evaulation.resx">
-      <DependentUpon>Evaulation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Faculty_Dashboard.resx">
       <DependentUpon>Faculty_Dashboard.cs</DependentUpon>
