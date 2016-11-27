@@ -579,11 +579,11 @@
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("MS Reference Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.Navy;
-            this.label17.Location = new System.Drawing.Point(314, 18);
+            this.label17.Location = new System.Drawing.Point(239, 18);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(197, 29);
+            this.label17.Size = new System.Drawing.Size(436, 29);
             this.label17.TabIndex = 5;
-            this.label17.Text = "MARKS SHEET";
+            this.label17.Text = "STUDENTS EVALUATTED BY YOU";
             // 
             // button15
             // 
@@ -1028,7 +1028,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1337, 735);
+            this.ClientSize = new System.Drawing.Size(1130, 735);
             this.Controls.Add(this.tabControl1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Faculty_Dashboard";

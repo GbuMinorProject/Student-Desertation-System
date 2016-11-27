@@ -51,9 +51,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.faculty_id = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -71,9 +68,6 @@
             // 
             this.splitContainer1.Panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("splitContainer1.Panel1.BackgroundImage")));
             this.splitContainer1.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.splitContainer1.Panel1.Controls.Add(this.button3);
-            this.splitContainer1.Panel1.Controls.Add(this.button4);
-            this.splitContainer1.Panel1.Controls.Add(this.button5);
             this.splitContainer1.Panel1.Controls.Add(this.menuStrip1);
             // 
             // splitContainer1.Panel2
@@ -100,7 +94,7 @@
             this.facultyToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(208, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(208, 26);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
@@ -110,22 +104,23 @@
             this.facultyToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.loginToolStripMenuItem,
             this.registerToolStripMenuItem});
+            this.facultyToolStripMenuItem.Font = new System.Drawing.Font("Arial Unicode MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.facultyToolStripMenuItem.Name = "facultyToolStripMenuItem";
-            this.facultyToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
+            this.facultyToolStripMenuItem.Size = new System.Drawing.Size(70, 22);
             this.facultyToolStripMenuItem.Text = "Faculty";
             this.facultyToolStripMenuItem.Click += new System.EventHandler(this.facultyToolStripMenuItem_Click);
             // 
             // loginToolStripMenuItem
             // 
             this.loginToolStripMenuItem.Name = "loginToolStripMenuItem";
-            this.loginToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.loginToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.loginToolStripMenuItem.Text = "Login";
             this.loginToolStripMenuItem.Click += new System.EventHandler(this.loginToolStripMenuItem_Click);
             // 
             // registerToolStripMenuItem
             // 
             this.registerToolStripMenuItem.Name = "registerToolStripMenuItem";
-            this.registerToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.registerToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.registerToolStripMenuItem.Text = "Register";
             this.registerToolStripMenuItem.Click += new System.EventHandler(this.registerToolStripMenuItem_Click);
             // 
@@ -320,35 +315,6 @@
             this.label1.Text = "Faculty Id";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // button3
-            // 
-            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
-            this.button3.Location = new System.Drawing.Point(18, 195);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(156, 52);
-            this.button3.TabIndex = 6;
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button4.Location = new System.Drawing.Point(18, 120);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(156, 49);
-            this.button4.TabIndex = 5;
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button5.BackgroundImage")));
-            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button5.Location = new System.Drawing.Point(18, 53);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(156, 47);
-            this.button5.TabIndex = 4;
-            this.button5.UseVisualStyleBackColor = true;
-            // 
             // Faculty_Pannel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -399,8 +365,5 @@
         private System.Windows.Forms.TextBox fac_id;
         private System.Windows.Forms.TextBox fac_name;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
     }
 }

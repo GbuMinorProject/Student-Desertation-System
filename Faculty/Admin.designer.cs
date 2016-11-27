@@ -45,11 +45,8 @@
             this.update_passwordPanel = new System.Windows.Forms.Panel();
             this.list_student = new System.Windows.Forms.Panel();
             this.avgp = new System.Windows.Forms.Panel();
-            this.button8 = new System.Windows.Forms.Button();
             this.GroupByfacPanel = new System.Windows.Forms.Panel();
-            this.button7 = new System.Windows.Forms.Button();
             this.faculty_r = new System.Windows.Forms.Panel();
-            this.button6 = new System.Windows.Forms.Button();
             this.student_under_faculty = new System.Windows.Forms.Panel();
             this.listView3 = new System.Windows.Forms.ListView();
             this.st_name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -57,6 +54,7 @@
             this.st_branch = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.st_topic = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.sfacultyo = new System.Windows.Forms.ComboBox();
+            this.button8 = new System.Windows.Forms.Button();
             this.label18 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.listView2 = new System.Windows.Forms.ListView();
@@ -71,6 +69,7 @@
             this.total_r = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.remark_r = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.drop_fact_r = new System.Windows.Forms.ComboBox();
+            this.button6 = new System.Windows.Forms.Button();
             this.studentlist = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -81,6 +80,7 @@
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.selectRoll = new System.Windows.Forms.ComboBox();
             this.button5 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.Printcmd = new System.Windows.Forms.Button();
@@ -333,16 +333,6 @@
             this.avgp.TabIndex = 3;
             this.avgp.Visible = false;
             // 
-            // button8
-            // 
-            this.button8.Location = new System.Drawing.Point(13, 23);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(118, 23);
-            this.button8.TabIndex = 6;
-            this.button8.Text = "Genrate Excel Sheet";
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
-            // 
             // GroupByfacPanel
             // 
             this.GroupByfacPanel.Controls.Add(this.faculty_r);
@@ -355,16 +345,6 @@
             this.GroupByfacPanel.Name = "GroupByfacPanel";
             this.GroupByfacPanel.Size = new System.Drawing.Size(780, 455);
             this.GroupByfacPanel.TabIndex = 4;
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(19, 165);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(126, 23);
-            this.button7.TabIndex = 5;
-            this.button7.Text = "Genrate Excel Sheet";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // faculty_r
             // 
@@ -379,16 +359,6 @@
             this.faculty_r.Name = "faculty_r";
             this.faculty_r.Size = new System.Drawing.Size(780, 455);
             this.faculty_r.TabIndex = 3;
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(16, 190);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(122, 23);
-            this.button6.TabIndex = 5;
-            this.button6.Text = "Genrate Excel Sheet";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // student_under_faculty
             // 
@@ -440,12 +410,22 @@
             // sfacultyo
             // 
             this.sfacultyo.FormattingEnabled = true;
-            this.sfacultyo.Location = new System.Drawing.Point(9, 72);
+            this.sfacultyo.Location = new System.Drawing.Point(16, 71);
             this.sfacultyo.Name = "sfacultyo";
             this.sfacultyo.Size = new System.Drawing.Size(122, 21);
             this.sfacultyo.TabIndex = 1;
             this.sfacultyo.Text = "Select Faculty";
             this.sfacultyo.SelectedIndexChanged += new System.EventHandler(this.sfacultyo_SelectedIndexChanged);
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(13, 23);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(118, 23);
+            this.button8.TabIndex = 6;
+            this.button8.Text = "Genrate Excel Sheet";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // label18
             // 
@@ -547,6 +527,16 @@
             this.drop_fact_r.Text = "Select Faculty";
             this.drop_fact_r.SelectedIndexChanged += new System.EventHandler(this.drop_fact_r_SelectedIndexChanged);
             // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(16, 190);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(122, 23);
+            this.button6.TabIndex = 5;
+            this.button6.Text = "Genrate Excel Sheet";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
             // studentlist
             // 
             this.studentlist.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -618,6 +608,16 @@
             this.button5.Text = "Print";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(19, 165);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(126, 23);
+            this.button7.TabIndex = 5;
+            this.button7.Text = "Genrate Excel Sheet";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // label15
             // 

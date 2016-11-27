@@ -84,5 +84,10 @@ namespace Faculty
             Form1 stude = new Form1();
             stude.Show();
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
