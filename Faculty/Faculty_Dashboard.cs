@@ -535,22 +535,29 @@ namespace Faculty
         private void midSemesterToolStripMenuItem_Click(object sender, EventArgs e)
         {
             mmlable.Text = "Literature Survey and Problem Identification (10)";
+            evaluated_list.Columns[2].Text = "Literature Survey and Problem Identification";
             groupBox1.Show();
             typeOfdesertation = "mid1";
+           
         }
 
         private void endSemesterToolStripMenuItem_Click(object sender, EventArgs e)
         {
             mmlable.Text = "Planning and Research Methodology with Partial Implementation (10)";
+           evaluated_list.Columns[2].Text = "Planning and Research Methodology with Partial Implementation";
+           // MessageBox.Show(evaluated_list.Columns[2].Text);
             groupBox1.Show();
             typeOfdesertation = "end1";
+          
         }
 
         private void midSemesterToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             mmlable.Text = "Literature Survey and Problem Identification (10)";
+           evaluated_list.Columns[2].Text = "Literature Survey and Problem Identification";
             groupBox1.Show();
             typeOfdesertation = "mid2";
+           
         }
 
         private void button13_Click(object sender, EventArgs e)
