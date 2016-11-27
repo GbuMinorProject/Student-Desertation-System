@@ -264,44 +264,58 @@ namespace Faculty
         private void button4_Click(object sender, EventArgs e)
         {
             String url = murlf + "inter_marks";
+
             String interroll = comboBox2.Text;
             String intermarks = internamlMarksbox.Text;
-            WebClient we = new WebClient();
-            NameValueCollection incoll = new NameValueCollection();
-            incoll.Add("student_id", interroll);
-            incoll.Add("internal", intermarks);
-            byte[] res = we.UploadValues(url, incoll);
-            String respon = Encoding.UTF8.GetString(res);            
-            JavaScriptSerializer js = new JavaScriptSerializer();
-            internal_marks rp = js.Deserialize<internal_marks>(respon);
-            // JavaScriptSerializer js=nre 
-            // MessageBox.Show(r_numb);
-            if (rp.responce_code == 100)
+            double im;
+            Double.TryParse(intermarks, out im);
+            if (im < 0 || im > 40)
             {
-                MessageBox.Show("Updated Successfully", "Updated");
-                //XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXxx
-
-                String Category = "Faculty";
-                String Action = "Internal Marks";
-                String by = fac_idf;
-
-                String urle = murlf + "log_add";
-                WebClient wc11 = new WebClient();
-                NameValueCollection value = new NameValueCollection();
-
-                value.Add("category", Category);
-                value.Add("action", Action);
-                value.Add("by_w", by);
-                byte[] stud_resp = wc11.UploadValues(urle, value);
-                //XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-
-
+                werror.SetError(this.internamlMarksbox, "Only marks Between 0 to 40 allowed");
+                internamlMarksbox.Focus();
 
             }
             else
-                if (rp.responce_code == 101)
             {
-                MessageBox.Show("Updation Not Possible", "Sorry");
+                werror.SetError(this.internamlMarksbox, "");
+                werror.Clear();
+                WebClient we = new WebClient();
+                NameValueCollection incoll = new NameValueCollection();
+                incoll.Add("student_id", interroll);
+                incoll.Add("internal", intermarks);
+                byte[] res = we.UploadValues(url, incoll);
+                String respon = Encoding.UTF8.GetString(res);
+                JavaScriptSerializer js = new JavaScriptSerializer();
+                internal_marks rp = js.Deserialize<internal_marks>(respon);
+                // JavaScriptSerializer js=nre 
+                // MessageBox.Show(r_numb);
+                if (rp.responce_code == 100)
+                {
+                    MessageBox.Show("Updated Successfully", "Updated");
+                    //XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXxx
+
+                    String Category = "Faculty";
+                    String Action = "Internal Marks";
+                    String by = fac_idf;
+
+                    String urle = murlf + "log_add";
+                    WebClient wc11 = new WebClient();
+                    NameValueCollection value = new NameValueCollection();
+
+                    value.Add("category", Category);
+                    value.Add("action", Action);
+                    value.Add("by_w", by);
+                    byte[] stud_resp = wc11.UploadValues(urle, value);
+                    //XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+
+
+                }
+                else
+                    if (rp.responce_code == 101)
+                {
+                    MessageBox.Show("Updation Not Possible", "Sorry");
+                }
             }
         }
 
