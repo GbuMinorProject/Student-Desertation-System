@@ -16,9 +16,9 @@ namespace Faculty
         {
             InitializeComponent();
             //TabPage tc=new TabPage();
-            tabControl1.Hide();
-            tabPage1.Hide();
-            tabPage2.Hide();
+           // tabControl1.Hide();
+            //tabPage1.Hide();
+           // tabPage2.Hide();
         }
 
         private void button1_Click(object sender, EventArgs e)

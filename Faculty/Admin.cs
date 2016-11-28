@@ -1421,6 +1421,16 @@ namespace Faculty
             //String rest
 
         }
+
+        private void faculty_r_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void avgp_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
     public class Admin_change
     {
