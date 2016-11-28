@@ -40,6 +40,7 @@
             this.groupByFacultyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupByFacultyrahulToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.studentUnderFacultyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.logsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.addfaculty = new System.Windows.Forms.Panel();
             this.update_passwordPanel = new System.Windows.Forms.Panel();
@@ -48,13 +49,20 @@
             this.GroupByfacPanel = new System.Windows.Forms.Panel();
             this.faculty_r = new System.Windows.Forms.Panel();
             this.student_under_faculty = new System.Windows.Forms.Panel();
+            this.log_pannel = new System.Windows.Forms.Panel();
+            this.catego = new System.Windows.Forms.ComboBox();
+            this.log_desc = new System.Windows.Forms.ListView();
+            this.l_id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.category = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.action = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.by = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.time = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.listView3 = new System.Windows.Forms.ListView();
             this.st_name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.st_roll = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.st_branch = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.st_topic = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.sfacultyo = new System.Windows.Forms.ComboBox();
-            this.button8 = new System.Windows.Forms.Button();
             this.label18 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.listView2 = new System.Windows.Forms.ListView();
@@ -82,6 +90,7 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
+            this.button8 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.Printcmd = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
@@ -143,6 +152,7 @@
             this.GroupByfacPanel.SuspendLayout();
             this.faculty_r.SuspendLayout();
             this.student_under_faculty.SuspendLayout();
+            this.log_pannel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.werror)).BeginInit();
             this.SuspendLayout();
             // 
@@ -166,7 +176,8 @@
             this.averageMarksToolStripMenuItem,
             this.groupByFacultyToolStripMenuItem,
             this.groupByFacultyrahulToolStripMenuItem,
-            this.studentUnderFacultyToolStripMenuItem});
+            this.studentUnderFacultyToolStripMenuItem,
+            this.logsToolStripMenuItem});
             this.adminToolStripMenuItem.Name = "adminToolStripMenuItem";
             this.adminToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
             this.adminToolStripMenuItem.Text = "Admin";
@@ -229,6 +240,13 @@
             this.studentUnderFacultyToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
             this.studentUnderFacultyToolStripMenuItem.Text = "Student Under Faculty";
             this.studentUnderFacultyToolStripMenuItem.Click += new System.EventHandler(this.studentUnderFacultyToolStripMenuItem_Click);
+            // 
+            // logsToolStripMenuItem
+            // 
+            this.logsToolStripMenuItem.Name = "logsToolStripMenuItem";
+            this.logsToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.logsToolStripMenuItem.Text = "Logs";
+            this.logsToolStripMenuItem.Click += new System.EventHandler(this.logsToolStripMenuItem_Click);
             // 
             // splitContainer1
             // 
@@ -323,6 +341,7 @@
             // 
             this.avgp.Controls.Add(this.GroupByfacPanel);
             this.avgp.Controls.Add(this.label15);
+            this.avgp.Controls.Add(this.button8);
             this.avgp.Controls.Add(this.button4);
             this.avgp.Controls.Add(this.Printcmd);
             this.avgp.Controls.Add(this.listView1);
@@ -362,14 +381,78 @@
             // 
             // student_under_faculty
             // 
+            this.student_under_faculty.Controls.Add(this.log_pannel);
             this.student_under_faculty.Controls.Add(this.listView3);
             this.student_under_faculty.Controls.Add(this.sfacultyo);
-            this.student_under_faculty.Controls.Add(this.button8);
             this.student_under_faculty.Dock = System.Windows.Forms.DockStyle.Fill;
             this.student_under_faculty.Location = new System.Drawing.Point(0, 0);
             this.student_under_faculty.Name = "student_under_faculty";
             this.student_under_faculty.Size = new System.Drawing.Size(812, 603);
             this.student_under_faculty.TabIndex = 4;
+            // 
+            // log_pannel
+            // 
+            this.log_pannel.Controls.Add(this.catego);
+            this.log_pannel.Controls.Add(this.log_desc);
+            this.log_pannel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.log_pannel.Location = new System.Drawing.Point(0, 0);
+            this.log_pannel.Name = "log_pannel";
+            this.log_pannel.Size = new System.Drawing.Size(812, 603);
+            this.log_pannel.TabIndex = 3;
+            // 
+            // catego
+            // 
+            this.catego.FormattingEnabled = true;
+            this.catego.Items.AddRange(new object[] {
+            "Faculty",
+            "Admin",
+            "All"});
+            this.catego.Location = new System.Drawing.Point(58, 74);
+            this.catego.Name = "catego";
+            this.catego.Size = new System.Drawing.Size(121, 21);
+            this.catego.TabIndex = 1;
+            this.catego.Text = "Category";
+            this.catego.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // log_desc
+            // 
+            this.log_desc.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.l_id,
+            this.category,
+            this.action,
+            this.by,
+            this.time});
+            this.log_desc.Location = new System.Drawing.Point(237, 20);
+            this.log_desc.Name = "log_desc";
+            this.log_desc.Size = new System.Drawing.Size(482, 317);
+            this.log_desc.TabIndex = 0;
+            this.log_desc.UseCompatibleStateImageBehavior = false;
+            this.log_desc.View = System.Windows.Forms.View.Details;
+            // 
+            // l_id
+            // 
+            this.l_id.Text = "ID";
+            this.l_id.Width = 70;
+            // 
+            // category
+            // 
+            this.category.Text = "Category";
+            this.category.Width = 125;
+            // 
+            // action
+            // 
+            this.action.Text = "Action";
+            this.action.Width = 68;
+            // 
+            // by
+            // 
+            this.by.Text = "By";
+            this.by.Width = 82;
+            // 
+            // time
+            // 
+            this.time.Text = "Date and Time";
+            this.time.Width = 189;
             // 
             // listView3
             // 
@@ -416,16 +499,6 @@
             this.sfacultyo.TabIndex = 1;
             this.sfacultyo.Text = "Select Faculty";
             this.sfacultyo.SelectedIndexChanged += new System.EventHandler(this.sfacultyo_SelectedIndexChanged);
-            // 
-            // button8
-            // 
-            this.button8.Location = new System.Drawing.Point(13, 23);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(118, 23);
-            this.button8.TabIndex = 6;
-            this.button8.Text = "Genrate Excel Sheet";
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // label18
             // 
@@ -629,6 +702,16 @@
             this.label15.TabIndex = 1;
             this.label15.Text = "Please Click Here to Fetch Student Data";
             this.label15.Click += new System.EventHandler(this.label15_Click);
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(613, 16);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(118, 23);
+            this.button8.TabIndex = 6;
+            this.button8.Text = "Genrate Excel Sheet";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button4
             // 
@@ -1089,6 +1172,7 @@
             this.faculty_r.ResumeLayout(false);
             this.faculty_r.PerformLayout();
             this.student_under_faculty.ResumeLayout(false);
+            this.log_pannel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.werror)).EndInit();
             this.ResumeLayout(false);
 
@@ -1197,5 +1281,14 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.ToolStripMenuItem logsToolStripMenuItem;
+        private System.Windows.Forms.Panel log_pannel;
+        private System.Windows.Forms.ComboBox catego;
+        private System.Windows.Forms.ListView log_desc;
+        private System.Windows.Forms.ColumnHeader l_id;
+        private System.Windows.Forms.ColumnHeader category;
+        private System.Windows.Forms.ColumnHeader action;
+        private System.Windows.Forms.ColumnHeader by;
+        private System.Windows.Forms.ColumnHeader time;
     }
 }

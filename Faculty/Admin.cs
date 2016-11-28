@@ -1286,7 +1286,7 @@ namespace Faculty
             list_student.Show();
             faculty_r.Show();
             student_under_faculty.Show();
-
+            log_pannel.Hide();
         }
 
         private void sfacultyo_SelectedIndexChanged(object sender, EventArgs e)
@@ -1421,13 +1421,58 @@ namespace Faculty
             //String rest
 
         }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            String cate = catego.Text;
+            listView1.Items.Clear();
+            WebClient wec = new WebClient();
+            NameValueCollection nec = new NameValueCollection();
+            nec.Add("category", cate);
+            byte[] res = wec.UploadValues(murlf+"log_ret", nec);
+            String rest = Encoding.UTF8.GetString(res);
+            MessageBox.Show(rest);
+            log_de[] logre = JsonConvert.DeserializeObject<log_de[]>(rest);
+            for(int i=0;i<logre.Length;i++)
+            {
+                ListViewItem ls = new ListViewItem(logre[i].sid);
+                ls.SubItems.Add(logre[i].category);
+                 ls.SubItems.Add(logre[i].action);
+                ls.SubItems.Add(logre[i].by_w);
+                ls.SubItems.Add(logre[i].log_time);
+                log_desc.Items.Add(ls);
+                i++;
+
+            }
+            
+            
+        }
+
+        private void logsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            werror.Clear(); GroupByfacPanel.Show();
+            avgp.Show();
+            addfaculty.Show();
+            update_passwordPanel.Show();
+            list_student.Show();
+            faculty_r.Show();
+            student_under_faculty.Show();
+            log_pannel.Show();
+        }
     }
     public class Admin_change
     {
         public int response_code { get; set; }
     }
 
-
+    public class log_de
+    {
+        public String sid { get; set; }
+        public String category { get; set; }
+        public String action { get; set; }
+        public String by_w { get; set; }
+        public String log_time { get; set; }
+    }
 
 
     public class student_admin
