@@ -1286,7 +1286,7 @@ namespace Faculty
             list_student.Show();
             faculty_r.Show();
             student_under_faculty.Show();
-            log_pannel.Hide();
+
         }
 
         private void sfacultyo_SelectedIndexChanged(object sender, EventArgs e)
@@ -1421,20 +1421,23 @@ namespace Faculty
             //String rest
 
         }
+
+        private void faculty_r_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void avgp_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
     public class Admin_change
     {
         public int response_code { get; set; }
     }
 
-    public class log_de
-    {
-        public String sid { get; set; }
-        public String category { get; set; }
-        public String action { get; set; }
-        public String by_w { get; set; }
-        public String log_time { get; set; }
-    }
+
 
 
     public class student_admin

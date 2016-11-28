@@ -44,16 +44,14 @@ namespace Faculty
                 backgroundWorker1.RunWorkerAsync();
             }
         }
-        public String usernam=null;
+
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
             if (!admin_user.Equals("") && !admin_pass.Equals(""))
             {
                  werror.SetError(this.button1, "");
                  werror.Clear();
-
                 String username = admin_user.Text;
-                usernam = username;
                 String password = admin_pass.Text;
 
                 String uri =murlf+ "adm_login";
@@ -81,7 +79,7 @@ namespace Faculty
             if (adm_json.responce_code == 100)
             {
                 MessageBox.Show("Administrator Verified", "Success!");
-                Admin ad = new Admin(usernam);
+                Admin ad = new Admin();
                 ad.Show();
 
             }

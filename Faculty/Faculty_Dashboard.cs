@@ -944,11 +944,6 @@ namespace Faculty
                 werror.Clear();
             }
         }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
     }
     class task_id_ass
         {
