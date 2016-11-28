@@ -161,7 +161,7 @@
             this.adminToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(175, 26);
+            this.menuStrip1.Size = new System.Drawing.Size(175, 136);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
@@ -178,9 +178,10 @@
             this.studentUnderFacultyToolStripMenuItem,
             this.logToolStripMenuItem});
             this.adminToolStripMenuItem.Font = new System.Drawing.Font("Arial Unicode MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.adminToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("adminToolStripMenuItem.Image")));
+            this.adminToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.adminToolStripMenuItem.Name = "adminToolStripMenuItem";
-            this.adminToolStripMenuItem.Size = new System.Drawing.Size(62, 22);
-            this.adminToolStripMenuItem.Text = "Admin";
+            this.adminToolStripMenuItem.Size = new System.Drawing.Size(140, 132);
             this.adminToolStripMenuItem.Click += new System.EventHandler(this.adminToolStripMenuItem_Click);
             // 
             // addStudentToolStripMenuItem
@@ -245,7 +246,7 @@
             // 
             this.logToolStripMenuItem.Name = "logToolStripMenuItem";
             this.logToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
-            this.logToolStripMenuItem.Text = "Log";
+            this.logToolStripMenuItem.Text = "Logs";
             this.logToolStripMenuItem.Click += new System.EventHandler(this.logToolStripMenuItem_Click);
             // 
             // splitContainer1
@@ -315,6 +316,8 @@
             // 
             // update_passwordPanel
             // 
+            this.update_passwordPanel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("update_passwordPanel.BackgroundImage")));
+            this.update_passwordPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.update_passwordPanel.Controls.Add(this.list_student);
             this.update_passwordPanel.Controls.Add(this.admin_user);
             this.update_passwordPanel.Controls.Add(this.admin_newpass);
@@ -330,6 +333,9 @@
             // 
             // list_student
             // 
+            this.list_student.BackColor = System.Drawing.SystemColors.Control;
+            this.list_student.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("list_student.BackgroundImage")));
+            this.list_student.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.list_student.Controls.Add(this.avgp);
             this.list_student.Dock = System.Windows.Forms.DockStyle.Fill;
             this.list_student.Location = new System.Drawing.Point(0, 0);
@@ -377,7 +383,6 @@
             this.faculty_r.Name = "faculty_r";
             this.faculty_r.Size = new System.Drawing.Size(812, 603);
             this.faculty_r.TabIndex = 3;
-            this.faculty_r.Paint += new System.Windows.Forms.PaintEventHandler(this.faculty_r_Paint);
             // 
             // student_under_faculty
             // 
@@ -394,6 +399,7 @@
             // 
             // log_pannel
             // 
+            this.log_pannel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.log_pannel.Controls.Add(this.catego);
             this.log_pannel.Controls.Add(this.log_desc);
             this.log_pannel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -405,28 +411,33 @@
             // 
             // catego
             // 
+            this.catego.Font = new System.Drawing.Font("Arial Unicode MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.catego.FormattingEnabled = true;
             this.catego.Items.AddRange(new object[] {
             "Admin",
             "Faculty"});
-            this.catego.Location = new System.Drawing.Point(40, 93);
+            this.catego.Location = new System.Drawing.Point(20, 33);
             this.catego.Name = "catego";
-            this.catego.Size = new System.Drawing.Size(121, 21);
+            this.catego.Size = new System.Drawing.Size(105, 26);
             this.catego.TabIndex = 1;
             this.catego.Text = "Select Type";
             this.catego.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // log_desc
             // 
+            this.log_desc.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.log_desc.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.log_desc.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.l_id,
             this.category,
             this.action,
             this.by,
             this.date_time});
-            this.log_desc.Location = new System.Drawing.Point(217, 43);
+            this.log_desc.Font = new System.Drawing.Font("Arial Unicode MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.log_desc.ForeColor = System.Drawing.Color.Black;
+            this.log_desc.Location = new System.Drawing.Point(165, 30);
             this.log_desc.Name = "log_desc";
-            this.log_desc.Size = new System.Drawing.Size(440, 249);
+            this.log_desc.Size = new System.Drawing.Size(586, 423);
             this.log_desc.TabIndex = 0;
             this.log_desc.UseCompatibleStateImageBehavior = false;
             this.log_desc.View = System.Windows.Forms.View.Details;
@@ -435,18 +446,22 @@
             // l_id
             // 
             this.l_id.Text = "Log ID";
+            this.l_id.Width = 108;
             // 
             // category
             // 
             this.category.Text = "Category";
+            this.category.Width = 119;
             // 
             // action
             // 
             this.action.Text = "Action";
+            this.action.Width = 134;
             // 
             // by
             // 
             this.by.Text = "By";
+            this.by.Width = 116;
             // 
             // date_time
             // 
@@ -683,7 +698,6 @@
             this.selectRoll.TabIndex = 0;
             this.selectRoll.Text = "Select Roll No";
             this.selectRoll.SelectedIndexChanged += new System.EventHandler(this.selectRoll_SelectedIndexChanged);
-            this.selectRoll.Leave += new System.EventHandler(this.selectRoll_Leave);
             // 
             // button5
             // 
@@ -778,27 +792,33 @@
             // 
             // admin_user
             // 
-            this.admin_user.Location = new System.Drawing.Point(305, 45);
+            this.admin_user.Font = new System.Drawing.Font("Arial Unicode MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.admin_user.ForeColor = System.Drawing.Color.Navy;
+            this.admin_user.Location = new System.Drawing.Point(448, 260);
             this.admin_user.Name = "admin_user";
-            this.admin_user.Size = new System.Drawing.Size(100, 20);
+            this.admin_user.Size = new System.Drawing.Size(100, 25);
             this.admin_user.TabIndex = 4;
             this.admin_user.TextChanged += new System.EventHandler(this.admin_user_TextChanged);
             // 
             // admin_newpass
             // 
-            this.admin_newpass.Location = new System.Drawing.Point(305, 112);
+            this.admin_newpass.Font = new System.Drawing.Font("Arial Unicode MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.admin_newpass.ForeColor = System.Drawing.Color.Navy;
+            this.admin_newpass.Location = new System.Drawing.Point(448, 327);
             this.admin_newpass.Name = "admin_newpass";
-            this.admin_newpass.Size = new System.Drawing.Size(100, 20);
+            this.admin_newpass.Size = new System.Drawing.Size(100, 25);
             this.admin_newpass.TabIndex = 3;
             this.admin_newpass.TextChanged += new System.EventHandler(this.admin_newpass_TextChanged);
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(173, 117);
+            this.label17.BackColor = System.Drawing.Color.Transparent;
+            this.label17.Font = new System.Drawing.Font("Arial Unicode MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.Color.Navy;
+            this.label17.Location = new System.Drawing.Point(230, 324);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(109, 16);
+            this.label17.Size = new System.Drawing.Size(128, 21);
             this.label17.TabIndex = 2;
             this.label17.Text = "New password";
             this.label17.Click += new System.EventHandler(this.label17_Click);
@@ -806,62 +826,70 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(181, 45);
+            this.label16.BackColor = System.Drawing.Color.Transparent;
+            this.label16.Font = new System.Drawing.Font("Arial Unicode MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.Navy;
+            this.label16.Location = new System.Drawing.Point(230, 257);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(79, 16);
+            this.label16.Size = new System.Drawing.Size(92, 21);
             this.label16.TabIndex = 1;
             this.label16.Text = "Username";
             this.label16.Click += new System.EventHandler(this.label16_Click);
             // 
             // updatebtn
             // 
-            this.updatebtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.updatebtn.Location = new System.Drawing.Point(250, 184);
+            this.updatebtn.Font = new System.Drawing.Font("Arial Unicode MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.updatebtn.Image = ((System.Drawing.Image)(resources.GetObject("updatebtn.Image")));
+            this.updatebtn.Location = new System.Drawing.Point(363, 411);
             this.updatebtn.Name = "updatebtn";
-            this.updatebtn.Size = new System.Drawing.Size(75, 23);
+            this.updatebtn.Size = new System.Drawing.Size(75, 76);
             this.updatebtn.TabIndex = 0;
-            this.updatebtn.Text = "Update";
             this.updatebtn.UseVisualStyleBackColor = true;
             this.updatebtn.Click += new System.EventHandler(this.button3_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(13, 28);
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Arial Unicode MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Navy;
+            this.label1.Location = new System.Drawing.Point(307, 203);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 15);
+            this.label1.Size = new System.Drawing.Size(57, 21);
             this.label1.TabIndex = 11;
             this.label1.Text = "Name";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(86, 235);
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(454, 437);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 22);
+            this.button1.Size = new System.Drawing.Size(79, 68);
             this.button1.TabIndex = 10;
-            this.button1.Text = "Submit";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold);
-            this.label12.Location = new System.Drawing.Point(16, 180);
+            this.label12.BackColor = System.Drawing.Color.Transparent;
+            this.label12.Font = new System.Drawing.Font("Arial Unicode MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.Navy;
+            this.label12.Location = new System.Drawing.Point(291, 368);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(103, 15);
+            this.label12.Size = new System.Drawing.Size(156, 21);
             this.label12.TabIndex = 9;
             this.label12.Text = "Confirm Password";
             this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
             // f_cpassword
             // 
-            this.f_cpassword.Location = new System.Drawing.Point(16, 198);
+            this.f_cpassword.Font = new System.Drawing.Font("Arial Unicode MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.f_cpassword.ForeColor = System.Drawing.Color.Navy;
+            this.f_cpassword.Location = new System.Drawing.Point(535, 364);
             this.f_cpassword.Name = "f_cpassword";
-            this.f_cpassword.Size = new System.Drawing.Size(312, 20);
+            this.f_cpassword.Size = new System.Drawing.Size(207, 25);
             this.f_cpassword.TabIndex = 8;
             this.f_cpassword.TextChanged += new System.EventHandler(this.f_cpassword_TextChanged);
             this.f_cpassword.Leave += new System.EventHandler(this.f_cpassword_Leave);
@@ -869,19 +897,23 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold);
-            this.label13.Location = new System.Drawing.Point(16, 126);
+            this.label13.BackColor = System.Drawing.Color.Transparent;
+            this.label13.Font = new System.Drawing.Font("Arial Unicode MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.Navy;
+            this.label13.Location = new System.Drawing.Point(295, 316);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(55, 15);
+            this.label13.Size = new System.Drawing.Size(89, 21);
             this.label13.TabIndex = 7;
             this.label13.Text = "Password";
             this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
             // f_password
             // 
-            this.f_password.Location = new System.Drawing.Point(16, 142);
+            this.f_password.Font = new System.Drawing.Font("Arial Unicode MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.f_password.ForeColor = System.Drawing.Color.Navy;
+            this.f_password.Location = new System.Drawing.Point(533, 312);
             this.f_password.Name = "f_password";
-            this.f_password.Size = new System.Drawing.Size(312, 20);
+            this.f_password.Size = new System.Drawing.Size(207, 25);
             this.f_password.TabIndex = 6;
             this.f_password.TextChanged += new System.EventHandler(this.f_password_TextChanged);
             this.f_password.Leave += new System.EventHandler(this.f_password_Leave);
@@ -889,28 +921,34 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold);
-            this.label14.Location = new System.Drawing.Point(16, 77);
+            this.label14.BackColor = System.Drawing.Color.Transparent;
+            this.label14.Font = new System.Drawing.Font("Arial Unicode MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.Navy;
+            this.label14.Location = new System.Drawing.Point(299, 261);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(59, 15);
+            this.label14.Size = new System.Drawing.Size(89, 21);
             this.label14.TabIndex = 5;
             this.label14.Text = "Faculty Id";
             this.label14.Click += new System.EventHandler(this.label14_Click);
             // 
             // fac_id
             // 
-            this.fac_id.Location = new System.Drawing.Point(16, 93);
+            this.fac_id.Font = new System.Drawing.Font("Arial Unicode MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fac_id.ForeColor = System.Drawing.Color.Navy;
+            this.fac_id.Location = new System.Drawing.Point(533, 257);
             this.fac_id.Name = "fac_id";
-            this.fac_id.Size = new System.Drawing.Size(312, 20);
+            this.fac_id.Size = new System.Drawing.Size(207, 25);
             this.fac_id.TabIndex = 4;
             this.fac_id.TextChanged += new System.EventHandler(this.fac_id_TextChanged);
             this.fac_id.Leave += new System.EventHandler(this.fac_id_Leave);
             // 
             // fac_name
             // 
-            this.fac_name.Location = new System.Drawing.Point(16, 46);
+            this.fac_name.Font = new System.Drawing.Font("Arial Unicode MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fac_name.ForeColor = System.Drawing.Color.Navy;
+            this.fac_name.Location = new System.Drawing.Point(535, 199);
             this.fac_name.Name = "fac_name";
-            this.fac_name.Size = new System.Drawing.Size(312, 20);
+            this.fac_name.Size = new System.Drawing.Size(205, 25);
             this.fac_name.TabIndex = 2;
             this.fac_name.TextChanged += new System.EventHandler(this.fac_name_TextChanged);
             this.fac_name.Leave += new System.EventHandler(this.fac_name_Leave);
@@ -918,11 +956,12 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(262, 22);
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Arial Unicode MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Indigo;
+            this.label2.Location = new System.Drawing.Point(313, 33);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(176, 20);
+            this.label2.Size = new System.Drawing.Size(204, 25);
             this.label2.TabIndex = 41;
             this.label2.Text = "Student Registration";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -930,17 +969,17 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(266, 517);
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.Location = new System.Drawing.Point(403, 561);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(92, 47);
+            this.button2.Size = new System.Drawing.Size(77, 65);
             this.button2.TabIndex = 40;
-            this.button2.Text = "Register";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // any_other_info
             // 
-            this.any_other_info.Location = new System.Drawing.Point(58, 437);
+            this.any_other_info.Location = new System.Drawing.Point(560, 492);
             this.any_other_info.Multiline = true;
             this.any_other_info.Name = "any_other_info";
             this.any_other_info.Size = new System.Drawing.Size(191, 75);
@@ -950,10 +989,12 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(55, 418);
+            this.label11.BackColor = System.Drawing.Color.Transparent;
+            this.label11.Font = new System.Drawing.Font("Arial Unicode MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.Navy;
+            this.label11.Location = new System.Drawing.Point(295, 492);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(155, 16);
+            this.label11.Size = new System.Drawing.Size(185, 21);
             this.label11.TabIndex = 38;
             this.label11.Text = "Any Other Information";
             this.label11.Click += new System.EventHandler(this.label11_Click);
@@ -961,72 +1002,88 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(55, 59);
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Arial Unicode MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Navy;
+            this.label3.Location = new System.Drawing.Point(295, 116);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(49, 16);
+            this.label3.Size = new System.Drawing.Size(57, 21);
             this.label3.TabIndex = 37;
             this.label3.Text = "Name";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // confirm_pass
             // 
-            this.confirm_pass.Location = new System.Drawing.Point(58, 395);
+            this.confirm_pass.Font = new System.Drawing.Font("Arial Unicode MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.confirm_pass.ForeColor = System.Drawing.Color.Navy;
+            this.confirm_pass.Location = new System.Drawing.Point(560, 437);
             this.confirm_pass.Name = "confirm_pass";
-            this.confirm_pass.Size = new System.Drawing.Size(191, 20);
+            this.confirm_pass.Size = new System.Drawing.Size(191, 25);
             this.confirm_pass.TabIndex = 36;
             this.confirm_pass.TextChanged += new System.EventHandler(this.confirm_pass_TextChanged);
             this.confirm_pass.Leave += new System.EventHandler(this.confirm_pass_Leave);
             // 
             // password
             // 
-            this.password.Location = new System.Drawing.Point(58, 343);
+            this.password.Font = new System.Drawing.Font("Arial Unicode MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.password.ForeColor = System.Drawing.Color.Navy;
+            this.password.Location = new System.Drawing.Point(560, 395);
             this.password.Name = "password";
-            this.password.Size = new System.Drawing.Size(191, 20);
+            this.password.Size = new System.Drawing.Size(191, 25);
             this.password.TabIndex = 34;
             this.password.TextChanged += new System.EventHandler(this.password_TextChanged);
             // 
             // topic
             // 
-            this.topic.Location = new System.Drawing.Point(58, 257);
+            this.topic.Font = new System.Drawing.Font("Arial Unicode MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.topic.ForeColor = System.Drawing.Color.Navy;
+            this.topic.Location = new System.Drawing.Point(560, 300);
             this.topic.Name = "topic";
-            this.topic.Size = new System.Drawing.Size(191, 20);
+            this.topic.Size = new System.Drawing.Size(191, 25);
             this.topic.TabIndex = 33;
             this.topic.TextChanged += new System.EventHandler(this.topic_TextChanged);
             this.topic.Leave += new System.EventHandler(this.topic_Leave);
             // 
             // broad_area
             // 
-            this.broad_area.Location = new System.Drawing.Point(58, 212);
+            this.broad_area.Font = new System.Drawing.Font("Arial Unicode MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.broad_area.ForeColor = System.Drawing.Color.Navy;
+            this.broad_area.Location = new System.Drawing.Point(560, 257);
             this.broad_area.Name = "broad_area";
-            this.broad_area.Size = new System.Drawing.Size(191, 20);
+            this.broad_area.Size = new System.Drawing.Size(191, 25);
             this.broad_area.TabIndex = 32;
             this.broad_area.TextChanged += new System.EventHandler(this.broad_area_TextChanged);
             this.broad_area.Leave += new System.EventHandler(this.broad_area_Leave);
             // 
             // branch
             // 
-            this.branch.Location = new System.Drawing.Point(58, 168);
+            this.branch.Font = new System.Drawing.Font("Arial Unicode MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.branch.ForeColor = System.Drawing.Color.Navy;
+            this.branch.Location = new System.Drawing.Point(560, 215);
             this.branch.Name = "branch";
-            this.branch.Size = new System.Drawing.Size(191, 20);
+            this.branch.Size = new System.Drawing.Size(191, 25);
             this.branch.TabIndex = 31;
             this.branch.TextChanged += new System.EventHandler(this.branch_TextChanged);
             this.branch.Leave += new System.EventHandler(this.branch_Leave);
             // 
             // rollno
             // 
-            this.rollno.Location = new System.Drawing.Point(58, 124);
+            this.rollno.Font = new System.Drawing.Font("Arial Unicode MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rollno.ForeColor = System.Drawing.Color.Navy;
+            this.rollno.Location = new System.Drawing.Point(560, 168);
             this.rollno.Name = "rollno";
-            this.rollno.Size = new System.Drawing.Size(191, 20);
+            this.rollno.Size = new System.Drawing.Size(191, 25);
             this.rollno.TabIndex = 30;
             this.rollno.TextChanged += new System.EventHandler(this.rollno_TextChanged);
             this.rollno.Leave += new System.EventHandler(this.rollno_Leave);
             // 
             // name
             // 
-            this.name.Location = new System.Drawing.Point(58, 78);
+            this.name.Font = new System.Drawing.Font("Arial Unicode MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.name.ForeColor = System.Drawing.Color.Navy;
+            this.name.Location = new System.Drawing.Point(560, 116);
             this.name.Name = "name";
-            this.name.Size = new System.Drawing.Size(191, 20);
+            this.name.Size = new System.Drawing.Size(191, 25);
             this.name.TabIndex = 29;
             this.name.TextChanged += new System.EventHandler(this.name_TextChanged);
             this.name.Leave += new System.EventHandler(this.name_Leave);
@@ -1034,10 +1091,12 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(55, 375);
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Font = new System.Drawing.Font("Arial Unicode MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.Navy;
+            this.label10.Location = new System.Drawing.Point(295, 437);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(137, 16);
+            this.label10.Size = new System.Drawing.Size(162, 21);
             this.label10.TabIndex = 28;
             this.label10.Text = "Conform Password";
             this.label10.Click += new System.EventHandler(this.label10_Click);
@@ -1045,10 +1104,12 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(55, 324);
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Font = new System.Drawing.Font("Arial Unicode MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Navy;
+            this.label9.Location = new System.Drawing.Point(295, 395);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(76, 16);
+            this.label9.Size = new System.Drawing.Size(89, 21);
             this.label9.TabIndex = 27;
             this.label9.Text = "Password";
             this.label9.Click += new System.EventHandler(this.label9_Click);
@@ -1056,10 +1117,12 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(62, 282);
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("Arial Unicode MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.Navy;
+            this.label8.Location = new System.Drawing.Point(295, 343);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(49, 16);
+            this.label8.Size = new System.Drawing.Size(57, 21);
             this.label8.TabIndex = 26;
             this.label8.Text = "Guide";
             this.label8.Click += new System.EventHandler(this.label8_Click);
@@ -1067,10 +1130,12 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(55, 238);
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Arial Unicode MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Navy;
+            this.label7.Location = new System.Drawing.Point(295, 300);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(48, 16);
+            this.label7.Size = new System.Drawing.Size(54, 21);
             this.label7.TabIndex = 25;
             this.label7.Text = "Topic";
             this.label7.Click += new System.EventHandler(this.label7_Click);
@@ -1078,10 +1143,12 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(55, 193);
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Arial Unicode MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Navy;
+            this.label6.Location = new System.Drawing.Point(295, 257);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(87, 16);
+            this.label6.Size = new System.Drawing.Size(101, 21);
             this.label6.TabIndex = 24;
             this.label6.Text = "Broad Area";
             this.label6.Click += new System.EventHandler(this.label6_Click);
@@ -1089,10 +1156,12 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(55, 147);
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Arial Unicode MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Navy;
+            this.label5.Location = new System.Drawing.Point(295, 215);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(56, 16);
+            this.label5.Size = new System.Drawing.Size(67, 21);
             this.label5.TabIndex = 23;
             this.label5.Text = "Branch";
             this.label5.Click += new System.EventHandler(this.label5_Click);
@@ -1100,20 +1169,24 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(55, 101);
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Arial Unicode MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Navy;
+            this.label4.Location = new System.Drawing.Point(295, 168);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(60, 16);
+            this.label4.Size = new System.Drawing.Size(69, 21);
             this.label4.TabIndex = 22;
             this.label4.Text = "Roll No";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // guide
             // 
+            this.guide.Font = new System.Drawing.Font("Arial Unicode MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guide.ForeColor = System.Drawing.Color.Navy;
             this.guide.FormattingEnabled = true;
-            this.guide.Location = new System.Drawing.Point(58, 299);
+            this.guide.Location = new System.Drawing.Point(560, 343);
             this.guide.Name = "guide";
-            this.guide.Size = new System.Drawing.Size(191, 21);
+            this.guide.Size = new System.Drawing.Size(191, 26);
             this.guide.TabIndex = 43;
             // 
             // backgroundWorker1
@@ -1160,7 +1233,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.MinimumSize = new System.Drawing.Size(969, 493);
             this.Name = "Admin";
-            this.Text = "Admin Pannel";
+            this.Text = "Welcome Admin";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.splitContainer1.Panel1.ResumeLayout(false);

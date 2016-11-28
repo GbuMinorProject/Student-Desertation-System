@@ -168,7 +168,7 @@ namespace Faculty
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Form1 frm = new Form1();
+            Student frm = new Student();
             frm.Show();
         }
 
@@ -381,7 +381,7 @@ namespace Faculty
 
         private void button6_Click(object sender, EventArgs e)
         {
-            String rollno = comboBox3.Text;
+            String rollno = comboBox4.Text;
             listView2.Items.Clear();
             WebClient wec = new WebClient();
             NameValueCollection nec = new NameValueCollection();
@@ -693,11 +693,35 @@ namespace Faculty
                     //Response_label.ForeColor = Color.Green;
                     // Response_label.Text = "Marks Submitted Successfully";
                     MessageBox.Show("Marks Submitted Successfully!", "Marks Evaluation Successfull");
+                    String Category = "Faculty";
+                    String Action = "External Marks";
+                    String by = fac_idf;
+
+                    String urle = murlf + "log_add";
+                    WebClient wc11 = new WebClient();
+                    NameValueCollection value = new NameValueCollection();
+
+                    value.Add("category", Category);
+                    value.Add("action", Action);
+                    value.Add("by_w", by);
+                    byte[] stud_resp = wc11.UploadValues(urle, value);
 
                 }
                 else if (resp_json.response_code == 110)
                 {
                     MessageBox.Show("Marks Updated Successfully!", "Marks Updation Successfull");
+                    String Category = "Faculty";
+                    String Action = "Update External Marks";
+                    String by = fac_idf;
+
+                    String urle = murlf + "log_add";
+                    WebClient wc11 = new WebClient();
+                    NameValueCollection value = new NameValueCollection();
+
+                    value.Add("category", Category);
+                    value.Add("action", Action);
+                    value.Add("by_w", by);
+                    byte[] stud_resp = wc11.UploadValues(urle, value);
 
                 }
                 else

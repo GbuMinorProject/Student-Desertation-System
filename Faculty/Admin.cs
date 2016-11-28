@@ -988,6 +988,42 @@ namespace Faculty
         private void selectRoll_Leave(object sender, EventArgs e)
         {
 
+        }
+
+        private void groupByFacultyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            addfaculty.Show();
+            werror.Clear();
+            werror.SetError(this.selectRoll, "");
+            update_passwordPanel.Show();
+            list_student.Show();
+            avgp.Show();
+            
+            GroupByfacPanel.Show();
+            faculty_r.Hide();
+
+        }
+        public void printmypage()
+        {
+            PrintDialog prd = new PrintDialog();
+            PrintDocument pdoc = new PrintDocument();
+            prd.Document = pdoc;
+            pdoc.PrintPage += new PrintPageEventHandler(printDocument1_PrintPage_1);
+            DialogResult drdd = prd.ShowDialog();
+            if(drdd==DialogResult.OK)
+            {
+                printDocument1.Print();
+            }
+        }
+
+
+        public void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
+        {
+        
+        }
+        private void selectRoll_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
             // String url = "http://gubappwebservices.esy.es/Student_detail_retrive_faculty";
             String url = murlf + "adm_acc_student";
             sroll_no = selectRoll.Text;
@@ -1036,45 +1072,12 @@ namespace Faculty
             }
         }
 
-        private void groupByFacultyToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            addfaculty.Show();
-            werror.Clear();
-            update_passwordPanel.Show();
-            list_student.Show();
-            avgp.Show();
-            
-            GroupByfacPanel.Show();
-            faculty_r.Hide();
-
-        }
-        public void printmypage()
-        {
-            PrintDialog prd = new PrintDialog();
-            PrintDocument pdoc = new PrintDocument();
-            prd.Document = pdoc;
-            pdoc.PrintPage += new PrintPageEventHandler(printDocument1_PrintPage_1);
-            DialogResult drdd = prd.ShowDialog();
-            if(drdd==DialogResult.OK)
-            {
-                printDocument1.Print();
-            }
-        }
-
-
-        public void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
-        {
-        
-        }
-        private void selectRoll_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void groupByFacultyrahulToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-            werror.Clear(); GroupByfacPanel.Show();
+             GroupByfacPanel.Show();
+            werror.Clear();
+            werror.SetError(this.selectRoll, "");
             avgp.Show();
             addfaculty.Show();
             update_passwordPanel.Show();
@@ -1281,7 +1284,9 @@ namespace Faculty
 
         private void studentUnderFacultyToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            werror.Clear(); GroupByfacPanel.Show();
+            werror.Clear();
+            werror.SetError(this.selectRoll, "");
+            GroupByfacPanel.Show();
             avgp.Show();
             addfaculty.Show();
             update_passwordPanel.Show();

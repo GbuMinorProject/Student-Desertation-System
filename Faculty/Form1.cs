@@ -15,13 +15,13 @@ using System.Windows.Forms;
 
 namespace Faculty
 {
-    public partial class Form1 : Form
+    public partial class Student : Form
     {
         int i = 0;
         String datatravel=null;
        String murlf = "http://localhost/Student_Desigatation/";
      //   String murlf = "http://172.25.5.54:8081/student_desigatation/";
-        public Form1()
+        public Student()
         {
             InitializeComponent();
       
