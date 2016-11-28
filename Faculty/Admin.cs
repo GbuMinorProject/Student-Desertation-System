@@ -27,8 +27,10 @@ namespace Faculty
         String murlf = "http://localhost/Student_Desigatation/";
         //  String murlf = "http://172.25.5.54:8081/student_desigatation/";
         String sroll_no = "";
-        public Admin()
+        String adm = null;
+        public Admin(String adm_id)
         {
+            adm = adm_id;
             InitializeComponent();
             werror = new System.Windows.Forms.ErrorProvider();
 
@@ -143,7 +145,7 @@ namespace Faculty
 
             String Category = "Admin";
             String Action = "Student Registation";
-            String by = admin_user.Text;
+            String by = adm;
             Faculty_Pannel st = new Faculty_Pannel();
 
             String urle = murlf + "log_add";
@@ -330,7 +332,7 @@ namespace Faculty
 
                     value.Add("category", Category);
                     value.Add("action", Action);
-                    value.Add("by_w", by);
+                    value.Add("by_w", adm);
                     byte[] stud_resp = wc11.UploadValues(urle, value);
                     //XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
@@ -1285,6 +1287,7 @@ namespace Faculty
             update_passwordPanel.Show();
             list_student.Show();
             faculty_r.Show();
+            log_pannel.Hide();
             student_under_faculty.Show();
 
         }
@@ -1431,6 +1434,60 @@ namespace Faculty
         {
 
         }
+
+        private void logToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            werror.Clear(); GroupByfacPanel.Show();
+            avgp.Show();
+            addfaculty.Show();
+            update_passwordPanel.Show();
+            list_student.Show();
+            faculty_r.Show();
+            student_under_faculty.Show();
+            log_pannel.Show();
+        }
+
+        private void listView4_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            werror.Clear(); GroupByfacPanel.Show();
+            avgp.Show();
+            addfaculty.Show();
+            update_passwordPanel.Show();
+            list_student.Show();
+            faculty_r.Show();
+            student_under_faculty.Show();
+            log_pannel.Show();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            String cate = catego.Text;
+            listView1.Items.Clear();
+            WebClient wec = new WebClient();
+            NameValueCollection nec = new NameValueCollection();
+            nec.Add("category", cate);
+            byte[] res = wec.UploadValues(murlf + "log_ret", nec);
+            String rest = Encoding.UTF8.GetString(res);
+         //   MessageBox.Show(rest);
+            log_de[] logre = JsonConvert.DeserializeObject<log_de[]>(rest);
+            log_desc.Items.Clear();
+            for (int i = 0; i < logre.Length; i++)
+            {
+                ListViewItem ls = new ListViewItem(logre[i].sid);
+                ls.SubItems.Add(logre[i].category);
+                ls.SubItems.Add(logre[i].action);
+                ls.SubItems.Add(logre[i].by_w);
+                ls.SubItems.Add(logre[i].log_time);
+                log_desc.Items.Add(ls);
+                i++;
+
+            }
+        }
+
+        private void panel1_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
     }
     public class Admin_change
     {
@@ -1510,6 +1567,14 @@ namespace Faculty
             public String guide;
      }
 
+    public class log_de
+    {
+        public String sid { get; set; }
+        public String category { get; set; }
+        public String action { get; set; }
+        public String by_w { get; set; }
+        public String log_time { get; set; }
+    }
 
 
 

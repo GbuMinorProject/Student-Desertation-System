@@ -44,21 +44,21 @@ namespace Faculty
                 backgroundWorker1.RunWorkerAsync();
             }
         }
-
+        String usenma = null;
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
             if (!admin_user.Equals("") && !admin_pass.Equals(""))
             {
                  werror.SetError(this.button1, "");
                  werror.Clear();
-                String username = admin_user.Text;
+                usenma = admin_user.Text;
                 String password = admin_pass.Text;
 
                 String uri =murlf+ "adm_login";
                 //   String uri = "http://gubappwebservices.esy.es/adm_login";
                 WebClient wc = new WebClient();
                 NameValueCollection form = new NameValueCollection();
-                form.Add("admin_id", username);
+                form.Add("admin_id", usenma);
                 form.Add("password", password);                
                 byte[] resp = wc.UploadValues(uri, form);
                 String res_string = Encoding.UTF8.GetString(resp);
@@ -79,7 +79,7 @@ namespace Faculty
             if (adm_json.responce_code == 100)
             {
                 MessageBox.Show("Administrator Verified", "Success!");
-                Admin ad = new Admin();
+                Admin ad = new Admin(usenma);
                 ad.Show();
 
             }
