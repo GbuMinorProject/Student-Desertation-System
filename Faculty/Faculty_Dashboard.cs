@@ -472,10 +472,7 @@ namespace Faculty
 
         }
 
-        private void button8_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
