@@ -1361,7 +1361,8 @@ namespace Faculty
                 workshet.Cells[i + 2, 8] = rst[i].Total;
 
             }
-            workbok.SaveAs("d:\\According Faculty.xls", Excel.XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue, Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
+            SaveFileDialog svd = new SaveFileDialog();
+           // workbok.SaveAs("d:\\According Faculty.xls", Excel.XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue, Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
             workbok.Close(true, misValue, misValue);
             xlapp.Quit();
         }
@@ -1393,7 +1394,8 @@ namespace Faculty
                 exsheet.Cells[i + 2, 4] = gfac[i].Presentaion;
                 exsheet.Cells[i + 2, 5] = gfac[i].Total;
             }
-            exwork.SaveAs("d:\\According to Student.xls", Excel.XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue, Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
+            SaveFileDialog svd = new SaveFileDialog();
+            //exwork.SaveAs("d:\\According to Student.xls", Excel.XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue, Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
             exwork.Close(true, misValue, misValue);
             xlapp.Quit();
 
@@ -1423,7 +1425,8 @@ namespace Faculty
 
 
             }
-            exworkb.SaveAs("d:\\All Student.xls", Excel.XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue, Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
+            SaveFileDialog svd = new SaveFileDialog();
+            //            exworkb.SaveAs("d:\\All Student.xls", Excel.XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue, Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
             exworkb.Close(true, misValue, misValue);
             xlapp.Quit();
 

@@ -140,6 +140,8 @@
             this.printDocument2 = new System.Drawing.Printing.PrintDocument();
             this.printDocument3 = new System.Drawing.Printing.PrintDocument();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.saveFileDialog2 = new System.Windows.Forms.SaveFileDialog();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -1371,5 +1373,7 @@
         private System.Windows.Forms.ColumnHeader date_time;
         private System.Windows.Forms.ComboBox catego;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog2;
     }
 }

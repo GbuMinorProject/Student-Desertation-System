@@ -296,7 +296,7 @@ namespace Faculty
                 incoll.Add("typee", ex);
                 byte[] res = we.UploadValues(url, incoll);
                 String respon = Encoding.UTF8.GetString(res);
-                MessageBox.Show(respon);
+              //  MessageBox.Show(respon);
                 JavaScriptSerializer js = new JavaScriptSerializer();
                 internal_marks rp = js.Deserialize<internal_marks>(respon);
                 // JavaScriptSerializer js=nre 
@@ -390,10 +390,10 @@ namespace Faculty
         {
 
         }
-
+        public String rollno = null;
         private void button6_Click(object sender, EventArgs e)
         {
-            String rollno = comboBox4.Text;
+            rollno = comboBox4.Text;
             listView2.Items.Clear();
             WebClient wec = new WebClient();
             NameValueCollection nec = new NameValueCollection();
@@ -565,16 +565,53 @@ namespace Faculty
                 MessageBox.Show("Excel not Installed", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             Excel.Workbook excelwor;
-            Excel.Worksheet excelshet;
+            Excel.Worksheet excelsheet;
             object misValue = System.Reflection.Missing.Value;
             excelwor = xlapp.Workbooks.Add(misValue);
-            excelshet = (Excel.Worksheet)excelwor.Worksheets.get_Item(1);
-            excelshet.Cells[1, 1] = "Roll No";
-            excelshet.Cells[1, 2] = "Name";
-            excelshet.Cells[2, 1] = "13/ICS/041";
-            excelshet.Cells[2, 2] = "Sachin";
+            excelsheet = (Excel.Worksheet)excelwor.Worksheets.get_Item(1);
+            excelsheet.Cells[1, 1] = "Task ID";
+            excelsheet.Cells[1, 2] = "Student ID";
+            excelsheet.Cells[1, 3] = "Task";
+            excelsheet.Cells[1, 4] = "Assaign Date";
+            excelsheet.Cells[1, 5] = "Deadline";
+            excelsheet.Cells[1, 6] = "Status";
+            WebClient wcc = new WebClient();
+            String urll = murlf + "task_desc";
+            NameValueCollection nvc = new NameValueCollection();
+            nvc.Add("rollno", rollno);
+            byte[] ress = wcc.UploadValues(urll, nvc);
+            String respp = Encoding.UTF8.GetString(ress);
+            //MessageBox.Show(respp);
+            stu_task[] sdres = JsonConvert.DeserializeObject<stu_task[]>(respp);
+            //  stu_data_ser[] sdres = JsonConvert.DeserializeObject<stu_data_ser[]>(respp);
+            int strlen = sdres.Length;
+            int k = 0;
+            while (k < strlen)
+            {
+                int p = 1;
+                String nam = (sdres[k].id);//.PadRight(10);
+                String rolno = sdres[k].student_id;//.PadRight(10);
+                String sbran = sdres[k].task;//.PadRight(10);
+                String stopi = sdres[k].assaign_date;//.PadRight(10);
+                String broad_are = sdres[k].deadline;//.PadRight(10);
+                String status = sdres[k].status;
+                excelsheet.Cells[k + 2, p] = nam;
+                excelsheet.Cells[k + 2, p + 1] = rolno;
+                excelsheet.Cells[k + 2, p + 2] = sbran;
+                excelsheet.Cells[k + 2, p + 3] = stopi;
+                excelsheet.Cells[k + 2, p + 4] = broad_are;
+                excelsheet.Cells[k + 2, p + 5] = status;
+                k++;
+            }
+            //  OpenFileDialog opfil = new OpenFileDialog();
+            //  MessageBox.Show(opfil.)
+            //SaveFileDialog svd = new SaveFileDialog();
+            //MessageBox.Show(svd.FileName);
+            //excelbook.SaveAs("svd.FileName", Excel.XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue, Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
+           
             //  excelwor.SaveAs("C:\\sampleexcel.xls", Excel.XlFileFormat.xlWorkbookNormal);
-            excelwor.SaveAs("f:\\csharp-Excel.xls", Excel.XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue, Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
+            SaveFileDialog svtt = new SaveFileDialog();
+            //excelwor.SaveAs("d:\\csharp-Excel.xls", Excel.XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue, Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
            // xlWorkBook.Close(true, misValue, misValue);
             excelwor.Close(true, misValue, misValue);
           
@@ -625,7 +662,11 @@ namespace Faculty
                 excelsheet.Cells[k + 2, p + 4] = broad_are;
                 k++;
             }
-            excelbook.SaveAs("f:\\Guided_Student.xls", Excel.XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue, Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
+            //  OpenFileDialog opfil = new OpenFileDialog();
+            //  MessageBox.Show(opfil.)
+            SaveFileDialog svd = new SaveFileDialog();
+           //MessageBox.Show(svd.FileName);
+           //excelbook.SaveAs("svd.FileName", Excel.XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue, Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
             excelbook.Close(true,misValue,misValue);
             xlapp.Quit();
 

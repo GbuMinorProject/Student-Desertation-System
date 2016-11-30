@@ -57,6 +57,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.extype = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -127,7 +128,8 @@
             this.printDocument2 = new System.Drawing.Printing.PrintDocument();
             this.backgroundWorker = new System.ComponentModel.BackgroundWorker();
             this.werror = new System.Windows.Forms.ErrorProvider(this.components);
-            this.extype = new System.Windows.Forms.ComboBox();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -192,7 +194,7 @@
             this.groupBox6.Controls.Add(this.button8);
             this.groupBox6.Controls.Add(this.comboBox6);
             this.groupBox6.Controls.Add(this.button9);
-            this.groupBox6.Location = new System.Drawing.Point(760, 295);
+            this.groupBox6.Location = new System.Drawing.Point(739, 289);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(445, 369);
             this.groupBox6.TabIndex = 33;
@@ -415,6 +417,18 @@
             this.groupBox4.Size = new System.Drawing.Size(648, 126);
             this.groupBox4.TabIndex = 31;
             this.groupBox4.TabStop = false;
+            // 
+            // extype
+            // 
+            this.extype.FormattingEnabled = true;
+            this.extype.Items.AddRange(new object[] {
+            "Odd Sem",
+            "Even Sem"});
+            this.extype.Location = new System.Drawing.Point(377, 85);
+            this.extype.Name = "extype";
+            this.extype.Size = new System.Drawing.Size(121, 24);
+            this.extype.TabIndex = 22;
+            this.extype.Text = "Type";
             // 
             // label6
             // 
@@ -681,7 +695,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 101F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 53F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 161F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 22F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Controls.Add(this.misc_textbox, 3, 1);
             this.tableLayoutPanel1.Controls.Add(this.textBox1, 9, 0);
@@ -710,7 +724,7 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 64.60674F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 35.39326F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(981, 197);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(983, 197);
             this.tableLayoutPanel1.TabIndex = 9;
             // 
             // misc_textbox
@@ -727,7 +741,7 @@
             this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox1.Location = new System.Drawing.Point(962, 52);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(14, 22);
+            this.textBox1.Size = new System.Drawing.Size(16, 22);
             this.textBox1.TabIndex = 21;
             // 
             // mmlable
@@ -910,7 +924,7 @@
             // 
             this.Roll_comboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.Roll_comboBox.FormattingEnabled = true;
-            this.Roll_comboBox.Location = new System.Drawing.Point(5, 150);
+            this.Roll_comboBox.Location = new System.Drawing.Point(5, 149);
             this.Roll_comboBox.Name = "Roll_comboBox";
             this.Roll_comboBox.Size = new System.Drawing.Size(143, 24);
             this.Roll_comboBox.TabIndex = 10;
@@ -1107,17 +1121,9 @@
             // 
             this.werror.ContainerControl = this;
             // 
-            // extype
+            // openFileDialog1
             // 
-            this.extype.FormattingEnabled = true;
-            this.extype.Items.AddRange(new object[] {
-            "Odd Sem",
-            "Even Sem"});
-            this.extype.Location = new System.Drawing.Point(377, 85);
-            this.extype.Name = "extype";
-            this.extype.Size = new System.Drawing.Size(121, 24);
-            this.extype.TabIndex = 22;
-            this.extype.Text = "Type";
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // Faculty_Dashboard
             // 
@@ -1257,5 +1263,7 @@
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Label welcom;
         private System.Windows.Forms.ComboBox extype;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }

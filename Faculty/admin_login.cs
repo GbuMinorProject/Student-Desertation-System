@@ -81,7 +81,6 @@ namespace Faculty
                 MessageBox.Show("Administrator Verified", "Success!");
                 Admin ad = new Admin(usenma);
                 ad.Show();
-                
 
             }
             else
