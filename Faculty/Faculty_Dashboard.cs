@@ -478,11 +478,7 @@ namespace Faculty
 
         }
 
-        private void button7_Click(object sender, EventArgs e)
-        {
-            print_detail();
-
-        }
+      
 
         
 

@@ -75,7 +75,6 @@
             this.st_roll = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.st_branch = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.st_topic = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.button7 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -541,7 +540,6 @@
             // 
             this.groupBox2.BackColor = System.Drawing.Color.WhiteSmoke;
             this.groupBox2.Controls.Add(this.listView1);
-            this.groupBox2.Controls.Add(this.button7);
             this.groupBox2.Controls.Add(this.button11);
             this.groupBox2.Controls.Add(this.button2);
             this.groupBox2.Location = new System.Drawing.Point(17, 56);
@@ -586,17 +584,6 @@
             this.st_topic.Text = "Topic";
             this.st_topic.Width = 245;
             // 
-            // button7
-            // 
-            this.button7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button7.BackgroundImage")));
-            this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button7.Location = new System.Drawing.Point(50, 279);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(45, 31);
-            this.button7.TabIndex = 18;
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
             // button11
             // 
             this.button11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button11.BackgroundImage")));
@@ -612,7 +599,7 @@
             // 
             this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.Location = new System.Drawing.Point(209, 276);
+            this.button2.Location = new System.Drawing.Point(67, 273);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(52, 37);
             this.button2.TabIndex = 5;
@@ -695,7 +682,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 101F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 53F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 161F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 22F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 26F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Controls.Add(this.misc_textbox, 3, 1);
             this.tableLayoutPanel1.Controls.Add(this.textBox1, 9, 0);
@@ -724,7 +711,7 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 64.60674F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 35.39326F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(983, 197);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(987, 197);
             this.tableLayoutPanel1.TabIndex = 9;
             // 
             // misc_textbox
@@ -741,7 +728,7 @@
             this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox1.Location = new System.Drawing.Point(962, 52);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(16, 22);
+            this.textBox1.Size = new System.Drawing.Size(20, 22);
             this.textBox1.TabIndex = 21;
             // 
             // mmlable
@@ -1197,7 +1184,6 @@
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
