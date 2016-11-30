@@ -24,8 +24,8 @@ namespace Faculty
 
     public partial class Admin : Form
     {
-        String murlf = "http://localhost/Student_Desigatation/";
-        //  String murlf = "http://172.25.5.54:8081/student_desigatation/";
+      //  String murlf = "http://localhost/Student_Desigatation/";
+          String murlf = "http://172.25.5.54/student_desigatation/";
         String sroll_no = "";
         String adm = null;
         public Admin(String adm_id)
@@ -183,6 +183,8 @@ namespace Faculty
         private void addFacultyToolStripMenuItem_Click(object sender, EventArgs e)
         {
             werror.Clear();
+            werror.SetError(this.f_password, "");
+          //  werror.SetError()this.name,"")    rahul_super15 change
 
             //  registerpanel.Hide();
             //  splitContainer1.Panel2.
@@ -988,6 +990,42 @@ namespace Faculty
         private void selectRoll_Leave(object sender, EventArgs e)
         {
 
+        }
+
+        private void groupByFacultyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            addfaculty.Show();
+            werror.Clear();
+            werror.SetError(this.selectRoll, "");
+            update_passwordPanel.Show();
+            list_student.Show();
+            avgp.Show();
+            
+            GroupByfacPanel.Show();
+            faculty_r.Hide();
+
+        }
+        public void printmypage()
+        {
+            PrintDialog prd = new PrintDialog();
+            PrintDocument pdoc = new PrintDocument();
+            prd.Document = pdoc;
+            pdoc.PrintPage += new PrintPageEventHandler(printDocument1_PrintPage_1);
+            DialogResult drdd = prd.ShowDialog();
+            if(drdd==DialogResult.OK)
+            {
+                printDocument1.Print();
+            }
+        }
+
+
+        public void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
+        {
+        
+        }
+        private void selectRoll_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
             // String url = "http://gubappwebservices.esy.es/Student_detail_retrive_faculty";
             String url = murlf + "adm_acc_student";
             sroll_no = selectRoll.Text;
@@ -1036,45 +1074,12 @@ namespace Faculty
             }
         }
 
-        private void groupByFacultyToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            addfaculty.Show();
-            werror.Clear();
-            update_passwordPanel.Show();
-            list_student.Show();
-            avgp.Show();
-            
-            GroupByfacPanel.Show();
-            faculty_r.Hide();
-
-        }
-        public void printmypage()
-        {
-            PrintDialog prd = new PrintDialog();
-            PrintDocument pdoc = new PrintDocument();
-            prd.Document = pdoc;
-            pdoc.PrintPage += new PrintPageEventHandler(printDocument1_PrintPage_1);
-            DialogResult drdd = prd.ShowDialog();
-            if(drdd==DialogResult.OK)
-            {
-                printDocument1.Print();
-            }
-        }
-
-
-        public void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
-        {
-        
-        }
-        private void selectRoll_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void groupByFacultyrahulToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-            werror.Clear(); GroupByfacPanel.Show();
+             GroupByfacPanel.Show();
+            werror.Clear();
+            werror.SetError(this.selectRoll, "");
             avgp.Show();
             addfaculty.Show();
             update_passwordPanel.Show();
@@ -1281,7 +1286,9 @@ namespace Faculty
 
         private void studentUnderFacultyToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            werror.Clear(); GroupByfacPanel.Show();
+            werror.Clear();
+            werror.SetError(this.selectRoll, "");
+            GroupByfacPanel.Show();
             avgp.Show();
             addfaculty.Show();
             update_passwordPanel.Show();
@@ -1487,6 +1494,129 @@ namespace Faculty
         private void panel1_Paint_1(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void fac_name_Validating(object sender, CancelEventArgs e)
+        {
+            //superuser15 
+            String nam = fac_name.Text;
+            if(nam.Equals(""))
+            {
+                // werror.SetError(this.fac_name, "Enter Name");
+                errorProvider1.SetError(this.fac_name, "Enter Name");
+            }
+        }
+
+        private void name_Leave_1(object sender, EventArgs e)
+        {
+            String a = name.Text;
+            if (a.Equals(""))
+            {
+                werror.SetError(this.name, "Enter Name");
+            }
+            else
+            {
+                werror.Clear();
+                werror.SetError(this.name, "");
+            }
+        }
+
+        private void rollno_Leave_1(object sender, EventArgs e)
+        {
+            String xx = rollno.Text;
+            if (xx.Equals(""))
+            {
+                werror.SetError(this.rollno, "Enter Roll No");
+            }
+            else
+            {
+                werror.Clear();
+                werror.SetError(this.rollno, "");
+            }
+        }
+
+        private void branch_Leave_1(object sender, EventArgs e)
+        {
+            String a = branch.Text;
+            if (a.Equals(""))
+            {
+                werror.SetError(this.branch, "Enter your Branch name ");
+            }
+            else
+            {
+                werror.Clear();
+                werror.SetError(this.branch, "");
+            }
+        }
+
+        private void broad_area_Leave_1(object sender, EventArgs e)
+        {
+            String a = broad_area.Text;
+            if (a.Equals(""))
+            {
+                werror.SetError(this.broad_area, "Enter your broad area");
+            }
+            else
+            {
+                werror.Clear();
+                werror.SetError(this.broad_area, "");
+            }
+        }
+
+        private void topic_Leave_1(object sender, EventArgs e)
+        {
+            String a = topic.Text;
+            if (a.Equals(""))
+            {
+                werror.SetError(this.topic, "Enter your topic");
+            }
+            else
+            {
+                werror.Clear();
+                werror.SetError(this.topic, "");
+            }
+        }
+
+        private void guide_Leave_1(object sender, EventArgs e)
+        {
+            String a = guide.Text;
+            if (a.Equals(""))
+            {
+                werror.SetError(this.guide, "Enter Your guide Name");
+            }
+            else
+            {
+                werror.Clear();
+                werror.SetError(this.guide, "");
+            }
+        }
+
+        private void password_Leave(object sender, EventArgs e)
+        {
+            String a = password.Text;
+            if (a.Equals(""))
+            {
+                werror.SetError(this.password, "Enter your Password");
+            }
+            else
+            {
+                werror.Clear();
+                werror.SetError(this.password, "");
+            }
+        }
+
+        private void confirm_pass_Leave_1(object sender, EventArgs e)
+        {
+            String a = confirm_pass.Text;
+            if (a.Equals(""))
+            {
+                werror.SetError(this.confirm_pass, "Enter your confirm password");
+            }
+            else
+            {
+                werror.Clear();
+                werror.SetError(this.confirm_pass, "");
+            }
         }
     }
     public class Admin_change

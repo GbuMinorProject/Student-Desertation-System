@@ -15,8 +15,8 @@ namespace Faculty
     public partial class Faculty_Pannel : Form
     {
         System.Windows.Forms.ErrorProvider werror;
-        public String murlf = "http://localhost/Student_Desigatation/";
-        //String murlf = "http://172.25.5.54:8081/student_desigatation/";
+    //    public String murlf = "http://localhost/Student_Desigatation/";
+        String murlf = "http://172.25.5.54/student_desigatation/";
         public Faculty_Pannel()
         {
             InitializeComponent();
@@ -244,11 +244,6 @@ namespace Faculty
         }
 
         private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void faculty_id_TextChanged(object sender, EventArgs e)
         {
 
         }

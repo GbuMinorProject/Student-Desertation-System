@@ -22,8 +22,8 @@ namespace Faculty
     {
 
         String nm = null;
-        String murlf = "http://localhost/Student_Desigatation/";
-        //  String murlf = "http://172.25.5.54:8081/student_desigatation/";
+     //   String murlf = "http://localhost/Student_Desigatation/";
+          String murlf = "http://172.25.5.54/student_desigatation/";
         String typeOfdesertation = "";
         String misc_marks = "";
         String report_marks = "";
@@ -34,9 +34,19 @@ namespace Faculty
         static String fac_idf = "";
         public Faculty_Dashboard(String nam)
         {
+            
             InitializeComponent();
+            
             nm = nam;
             fac_idf = nam;
+            WebClient wr = new WebClient();
+            NameValueCollection nrec = new NameValueCollection();
+            nrec.Add("fact_id", nam);
+            
+            byte[] resp= wr.UploadValues(murlf + "retr_fac_name", nrec);
+            String serres = Encoding.UTF8.GetString(resp);
+            fac_name[] facnam = JsonConvert.DeserializeObject<fac_name[]>(serres);
+            welcom.Text = "Welcome "+facnam[0].Faculty_Name;
             Faculty_Pannel fcp = new Faculty_Pannel();
             fcp.Visible = false;
          //   MessageBox.Show("Dashboad");
@@ -168,7 +178,7 @@ namespace Faculty
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Form1 frm = new Form1();
+            Student frm = new Student();
             frm.Show();
         }
 
@@ -264,7 +274,7 @@ namespace Faculty
         private void button4_Click(object sender, EventArgs e)
         {
             String url = murlf + "inter_marks";
-
+            String ex = extype.Text;
             String interroll = comboBox2.Text;
             String intermarks = internamlMarksbox.Text;
             double im;
@@ -283,8 +293,10 @@ namespace Faculty
                 NameValueCollection incoll = new NameValueCollection();
                 incoll.Add("student_id", interroll);
                 incoll.Add("internal", intermarks);
+                incoll.Add("typee", ex);
                 byte[] res = we.UploadValues(url, incoll);
                 String respon = Encoding.UTF8.GetString(res);
+                MessageBox.Show(respon);
                 JavaScriptSerializer js = new JavaScriptSerializer();
                 internal_marks rp = js.Deserialize<internal_marks>(respon);
                 // JavaScriptSerializer js=nre 
@@ -333,7 +345,7 @@ namespace Faculty
                 nec.Add("dead", datep);
             byte[] bt = wec.UploadValues(murlf + "task_assgin", nec);
             String ser = Encoding.UTF8.GetString(bt);
-            MessageBox.Show(ser);
+           // MessageBox.Show(ser);
             JavaScriptSerializer jser = new JavaScriptSerializer();
             stu_resp sttp = jser.Deserialize<stu_resp>(ser);  
             //      stu_resp[] strpp = JsonConvert.DeserializeObject<stu_resp[]>(ser);
@@ -381,7 +393,7 @@ namespace Faculty
 
         private void button6_Click(object sender, EventArgs e)
         {
-            String rollno = comboBox3.Text;
+            String rollno = comboBox4.Text;
             listView2.Items.Clear();
             WebClient wec = new WebClient();
             NameValueCollection nec = new NameValueCollection();
@@ -488,7 +500,7 @@ namespace Faculty
             task_id.Add("student_roll", stuid);
             byte[] resp = wec.UploadValues(murlf + "student_task", task_id);
             String oresp = Encoding.UTF8.GetString(resp);
-            MessageBox.Show(oresp);
+          //  MessageBox.Show(oresp);
             task_id_ass[] tasid = JsonConvert.DeserializeObject<task_id_ass[]>(oresp);
             int p = 0;
             while (p < tasid.Length)
@@ -613,7 +625,7 @@ namespace Faculty
                 excelsheet.Cells[k + 2, p + 4] = broad_are;
                 k++;
             }
-            excelbook.SaveAs("d:\\Guided_Student.xls", Excel.XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue, Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
+            excelbook.SaveAs("f:\\Guided_Student.xls", Excel.XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue, Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
             excelbook.Close(true,misValue,misValue);
             xlapp.Quit();
 
@@ -693,11 +705,35 @@ namespace Faculty
                     //Response_label.ForeColor = Color.Green;
                     // Response_label.Text = "Marks Submitted Successfully";
                     MessageBox.Show("Marks Submitted Successfully!", "Marks Evaluation Successfull");
+                    String Category = "Faculty";
+                    String Action = "External Marks";
+                    String by = fac_idf;
+
+                    String urle = murlf + "log_add";
+                    WebClient wc11 = new WebClient();
+                    NameValueCollection value = new NameValueCollection();
+
+                    value.Add("category", Category);
+                    value.Add("action", Action);
+                    value.Add("by_w", by);
+                    byte[] stud_resp = wc11.UploadValues(urle, value);
 
                 }
                 else if (resp_json.response_code == 110)
                 {
                     MessageBox.Show("Marks Updated Successfully!", "Marks Updation Successfull");
+                    String Category = "Faculty";
+                    String Action = "Update External Marks";
+                    String by = fac_idf;
+
+                    String urle = murlf + "log_add";
+                    WebClient wc11 = new WebClient();
+                    NameValueCollection value = new NameValueCollection();
+
+                    value.Add("category", Category);
+                    value.Add("action", Action);
+                    value.Add("by_w", by);
+                    byte[] stud_resp = wc11.UploadValues(urle, value);
 
                 }
                 else
@@ -944,6 +980,10 @@ namespace Faculty
                 werror.Clear();
             }
         }
+    }
+    class fac_name
+    {
+      public String Faculty_Name { get; set; }
     }
     class task_id_ass
         {

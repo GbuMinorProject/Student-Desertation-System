@@ -29,7 +29,7 @@ namespace Faculty
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Form1 student_pannel = new Form1();
+            Student student_pannel = new Student();
             student_pannel.Show();
         }
 
@@ -55,11 +55,6 @@ namespace Faculty
             
         }
 
-        private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -81,7 +76,7 @@ namespace Faculty
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-            Form1 stude = new Form1();
+            Student stude = new Student();
             stude.Show();
         }
 
