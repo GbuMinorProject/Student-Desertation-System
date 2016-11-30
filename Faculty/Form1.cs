@@ -19,8 +19,8 @@ namespace Faculty
     {
         int i = 0;
         String datatravel=null;
-     //  String murlf = "http://localhost/Student_Desigatation/";
-        String murlf = "http://172.25.5.54/student_desigatation/";
+       String murlf = "http://localhost/Student_Desigatation/";
+     //   String murlf = "http://172.25.5.54:8081/student_desigatation/";
         public Student()
         {
             InitializeComponent();
@@ -421,118 +421,6 @@ namespace Faculty
         private void Studentdetailpanel_Paint(object sender, PaintEventArgs e)
         {
 
-        }
-
-        private void name_Leave(object sender, EventArgs e)
-        {
-            String a = name.Text;
-            if (a.Equals(""))
-            {
-                errorProvider1.SetError(this.name, "Enter Name");
-            }
-            else
-            {
-                errorProvider1.Clear();
-                errorProvider1.SetError(this.name, "");
-            }
-        }
-
-        private void rollno_Leave(object sender, EventArgs e)
-        {
-            String a = rollno.Text;
-            if (a.Equals(""))
-            {
-                errorProvider1.SetError(this.rollno, "Enter Roll no");
-            }
-            else
-            {
-                errorProvider1.Clear();
-                errorProvider1.SetError(this.rollno, "");
-            }
-        }
-
-        private void branch_Leave(object sender, EventArgs e)
-        {
-            String a = branch.Text;
-            if (a.Equals(""))
-            {
-                errorProvider1.SetError(this.branch, "Enter your branch");
-            }
-            else
-            {
-                errorProvider1.Clear();
-                errorProvider1.SetError(this.branch, "");
-            }
-        }
-
-        private void broad_area_Leave(object sender, EventArgs e)
-        {
-            String a = broad_area.Text;
-            if (a.Equals(""))
-            {
-                errorProvider1.SetError(this.broad_area, "Enter Broad Area");
-            }
-            else
-            {
-                errorProvider1.Clear();
-                errorProvider1.SetError(this.broad_area, "");
-            }
-        }
-
-        private void topic_Leave(object sender, EventArgs e)
-        {
-            String a = topic.Text;
-            if (a.Equals(""))
-            {
-                errorProvider1.SetError(this.topic, "Enter your topic");
-            }
-            else
-            {
-                errorProvider1.Clear();
-                errorProvider1.SetError(this.topic, "");
-            }
-        }
-
-        private void guide_Leave(object sender, EventArgs e)
-        {
-            String a = guide.Text;
-            if (a.Equals(""))
-            {
-                errorProvider1.SetError(this.guide, "Enter Your guide Name");
-            }
-            else
-            {
-                errorProvider1.Clear();
-                errorProvider1.SetError(this.guide, "");
-            }
-        }
-
-        private void password_Leave(object sender, EventArgs e)
-        {
-            String a = password.Text;
-            if (a.Equals(""))
-            {
-                errorProvider1.SetError(this.password, "Enter your password");
-            }
-            else
-            {
-                errorProvider1.Clear();
-                errorProvider1.SetError(this.password, "");
-            }
-        }
-
-        private void confirm_pass_Leave(object sender, EventArgs e)
-        {
-            String a = confirm_pass.Text;
-            if (a.Equals(""))
-            {
-                errorProvider1.SetError(this.confirm_pass, "Enter your confirm password");
-            }
-            else
-            {
-                errorProvider1.Clear();
-                errorProvider1.SetError(this.confirm_pass, "");
-            }
         }
     }
 

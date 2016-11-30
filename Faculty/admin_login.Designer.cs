@@ -70,7 +70,7 @@
             this.admin_pass.ForeColor = System.Drawing.Color.Navy;
             this.admin_pass.Location = new System.Drawing.Point(228, 120);
             this.admin_pass.Name = "admin_pass";
-            this.admin_pass.PasswordChar = 'x';
+            this.admin_pass.PasswordChar = '*';
             this.admin_pass.Size = new System.Drawing.Size(100, 25);
             this.admin_pass.TabIndex = 2;
             // 
@@ -108,7 +108,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(446, 262);
+            this.ClientSize = new System.Drawing.Size(446, 261);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.admin_user);
             this.Controls.Add(this.admin_pass);

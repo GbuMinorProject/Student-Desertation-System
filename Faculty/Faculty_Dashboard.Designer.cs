@@ -32,7 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Faculty_Dashboard));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.welcom = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.listView2 = new System.Windows.Forms.ListView();
             this.task_id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -127,7 +126,6 @@
             this.printDocument2 = new System.Drawing.Printing.PrintDocument();
             this.backgroundWorker = new System.ComponentModel.BackgroundWorker();
             this.werror = new System.Windows.Forms.ErrorProvider(this.components);
-            this.extype = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -156,7 +154,6 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.welcom);
             this.tabPage1.Controls.Add(this.groupBox6);
             this.tabPage1.Controls.Add(this.groupBox5);
             this.tabPage1.Controls.Add(this.groupBox4);
@@ -170,16 +167,6 @@
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
-            // 
-            // welcom
-            // 
-            this.welcom.AutoSize = true;
-            this.welcom.Font = new System.Drawing.Font("Mongolian Baiti", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.welcom.Location = new System.Drawing.Point(14, 19);
-            this.welcom.Name = "welcom";
-            this.welcom.Size = new System.Drawing.Size(70, 24);
-            this.welcom.TabIndex = 29;
-            this.welcom.Text = "label8";
             // 
             // groupBox6
             // 
@@ -404,13 +391,12 @@
             // groupBox4
             // 
             this.groupBox4.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.groupBox4.Controls.Add(this.extype);
             this.groupBox4.Controls.Add(this.label6);
             this.groupBox4.Controls.Add(this.comboBox2);
             this.groupBox4.Controls.Add(this.label2);
             this.groupBox4.Controls.Add(this.internamlMarksbox);
             this.groupBox4.Controls.Add(this.button4);
-            this.groupBox4.Location = new System.Drawing.Point(17, 532);
+            this.groupBox4.Location = new System.Drawing.Point(17, 521);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(648, 126);
             this.groupBox4.TabIndex = 31;
@@ -455,7 +441,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(534, 79);
+            this.button4.Location = new System.Drawing.Point(392, 87);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(58, 23);
             this.button4.TabIndex = 9;
@@ -471,7 +457,7 @@
             this.groupBox3.Controls.Add(this.label1);
             this.groupBox3.Controls.Add(this.newbroad);
             this.groupBox3.Controls.Add(this.button3);
-            this.groupBox3.Location = new System.Drawing.Point(17, 406);
+            this.groupBox3.Location = new System.Drawing.Point(17, 391);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(648, 100);
             this.groupBox3.TabIndex = 30;
@@ -530,9 +516,9 @@
             this.groupBox2.Controls.Add(this.button7);
             this.groupBox2.Controls.Add(this.button11);
             this.groupBox2.Controls.Add(this.button2);
-            this.groupBox2.Location = new System.Drawing.Point(17, 56);
+            this.groupBox2.Location = new System.Drawing.Point(17, 19);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(648, 327);
+            this.groupBox2.Size = new System.Drawing.Size(648, 332);
             this.groupBox2.TabIndex = 29;
             this.groupBox2.TabStop = false;
             // 
@@ -545,9 +531,9 @@
             this.st_branch,
             this.st_topic});
             this.listView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listView1.Location = new System.Drawing.Point(22, 35);
+            this.listView1.Location = new System.Drawing.Point(22, 21);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(602, 214);
+            this.listView1.Size = new System.Drawing.Size(602, 228);
             this.listView1.TabIndex = 1;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -681,7 +667,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 101F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 53F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 161F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 16F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Controls.Add(this.misc_textbox, 3, 1);
             this.tableLayoutPanel1.Controls.Add(this.textBox1, 9, 0);
@@ -710,7 +696,7 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 64.60674F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 35.39326F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(981, 197);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(977, 197);
             this.tableLayoutPanel1.TabIndex = 9;
             // 
             // misc_textbox
@@ -727,7 +713,7 @@
             this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox1.Location = new System.Drawing.Point(962, 52);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(14, 22);
+            this.textBox1.Size = new System.Drawing.Size(10, 22);
             this.textBox1.TabIndex = 21;
             // 
             // mmlable
@@ -1107,18 +1093,6 @@
             // 
             this.werror.ContainerControl = this;
             // 
-            // extype
-            // 
-            this.extype.FormattingEnabled = true;
-            this.extype.Items.AddRange(new object[] {
-            "Odd Sem",
-            "Even Sem"});
-            this.extype.Location = new System.Drawing.Point(377, 85);
-            this.extype.Name = "extype";
-            this.extype.Size = new System.Drawing.Size(121, 24);
-            this.extype.TabIndex = 22;
-            this.extype.Text = "Type";
-            // 
             // Faculty_Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1133,7 +1107,6 @@
             this.Load += new System.EventHandler(this.Faculty_Dashboard_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
             this.groupBox6.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
@@ -1255,7 +1228,5 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.Label welcom;
-        private System.Windows.Forms.ComboBox extype;
     }
 }

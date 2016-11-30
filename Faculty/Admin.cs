@@ -1278,6 +1278,7 @@ namespace Faculty
                 String prro = faculty_code + " " + report_writting + " " + technical_content + " " + presentaion + " " + total + " " + remark;
                 grp.DrawString(prro, fnt, new SolidBrush(Color.Black), stxx + 10, styy + stoff);
                     stoff = stoff + 10;
+                
                 k++;
             }
 

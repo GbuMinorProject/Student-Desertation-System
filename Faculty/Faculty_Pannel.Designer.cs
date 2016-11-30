@@ -52,6 +52,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.faculty_id = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -341,6 +342,11 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Faculty Id";
             this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(12, 106);
             // 
             // Faculty_Pannel
             // 
