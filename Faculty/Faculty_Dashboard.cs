@@ -625,7 +625,7 @@ namespace Faculty
                 excelsheet.Cells[k + 2, p + 4] = broad_are;
                 k++;
             }
-            excelbook.SaveAs("d:\\Guided_Student.xls", Excel.XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue, Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
+            excelbook.SaveAs("f:\\Guided_Student.xls", Excel.XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue, Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
             excelbook.Close(true,misValue,misValue);
             xlapp.Quit();
 
