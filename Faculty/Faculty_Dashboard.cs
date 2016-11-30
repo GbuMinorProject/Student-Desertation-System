@@ -99,7 +99,7 @@ namespace Faculty
             tabPage1.Text = "My Student";
             tabPage2.Text = "Evaluation";
             WebClient we = new WebClient();
-            MessageBox.Show("Dashboard");
+          //  MessageBox.Show("Dashboard");
             Faculty_Pannel fcp = new Faculty_Pannel();
             fcp.Visible = false;
             fcp.Close();
