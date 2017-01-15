@@ -26,7 +26,7 @@ namespace Faculty
           //String murlf = "http://172.25.5.54/student_desigatation/";
         String typeOfdesertation = "";
         String misc_marks = "";
-        String report_marks = "";
+        String report_marks = ""; 
         String technical_marks = "";
         String presentation_marks = "";
         String total_marks = "";
