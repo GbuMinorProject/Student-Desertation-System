@@ -24,8 +24,8 @@ namespace Faculty
 
     public partial class Admin : Form
     {
-      //  String murlf = "http://localhost/Student_Desigatation/";
-          String murlf = "http://172.25.5.54/student_desigatation/";
+        String murlf = "http://localhost/Student_Desigatation/";
+      //    String murlf = "http://172.25.5.54/student_desigatation/";
         String sroll_no = "";
         String adm = null;
         public Admin(String adm_id)

@@ -19,8 +19,8 @@ namespace Faculty
     {
         int i = 0;
         String datatravel=null;
-     //  String murlf = "http://localhost/Student_Desigatation/";
-        String murlf = "http://172.25.5.54/student_desigatation/";
+        String murlf = "http://localhost/Student_Desigatation/";
+       // String murlf = "http://172.25.5.54/student_desigatation/";
         public Student()
         {
             InitializeComponent();

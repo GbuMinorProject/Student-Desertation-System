@@ -19,8 +19,8 @@ namespace Faculty
 {
     public partial class admin_login : Form
     {
-      //  String murlf = "http://localhost/Student_Desigatation/";
-        String murlf = "http://172.25.5.54/student_desigatation/";
+       String murlf = "http://localhost/Student_Desigatation/";
+        //String murlf = "http://172.25.5.54/student_desigatation/";
         public admin_login()
         {
             InitializeComponent();

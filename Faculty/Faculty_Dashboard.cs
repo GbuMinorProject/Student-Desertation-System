@@ -22,8 +22,8 @@ namespace Faculty
     {
 
         String nm = null;
-     //   String murlf = "http://localhost/Student_Desigatation/";
-          String murlf = "http://172.25.5.54/student_desigatation/";
+          String murlf = "http://localhost/Student_Desigatation/";
+          //String murlf = "http://172.25.5.54/student_desigatation/";
         String typeOfdesertation = "";
         String misc_marks = "";
         String report_marks = "";
